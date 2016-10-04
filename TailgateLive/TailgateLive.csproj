@@ -297,16 +297,6 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\UsersEvents\Create.cshtml" />
-    <Content Include="Views\UsersEvents\Delete.cshtml" />
-    <Content Include="Views\UsersEvents\Details.cshtml" />
-    <Content Include="Views\UsersEvents\Edit.cshtml" />
-    <Content Include="Views\UsersEvents\Index.cshtml" />
-    <Content Include="Views\UsersTeams\Create.cshtml" />
-    <Content Include="Views\UsersTeams\Delete.cshtml" />
-    <Content Include="Views\UsersTeams\Details.cshtml" />
-    <Content Include="Views\UsersTeams\Edit.cshtml" />
-    <Content Include="Views\UsersTeams\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
