@@ -46,7 +46,9 @@ namespace TailgateLive.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments,HostId")] Event @event)
+
+        public ActionResult Create([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments")] Event @event)
+
         {
             if (ModelState.IsValid)
             {
@@ -123,5 +125,6 @@ namespace TailgateLive.Controllers
             }
             base.Dispose(disposing);
         }
+
     }
 }
