@@ -16,9 +16,6 @@ namespace TailgateLive.Models
         public int EventRating { get; set; }
         public bool EventStatus { get; set; }
         public string EventComments { get; set; }
-        [ForeignKey("User")]
-        public int UserId { get; set; }
-        public User User { get; set; }
         public ICollection <User> Users { get; set; }
     }
 }

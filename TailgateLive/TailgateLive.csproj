@@ -204,13 +204,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610041559477_added models.cs" />
-    <Compile Include="Migrations\201610041559477_added models.Designer.cs">
-      <DependentUpon>201610041559477_added models.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610041721272_newmigration1.cs" />
-    <Compile Include="Migrations\201610041721272_newmigration1.Designer.cs">
-      <DependentUpon>201610041721272_newmigration1.cs</DependentUpon>
+    <Compile Include="Migrations\201610041937353_test.cs" />
+    <Compile Include="Migrations\201610041937353_test.Designer.cs">
+      <DependentUpon>201610041937353_test.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -282,11 +278,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Events\Create.cshtml" />
-    <Content Include="Views\Events\Delete.cshtml" />
-    <Content Include="Views\Events\Details.cshtml" />
-    <Content Include="Views\Events\Edit.cshtml" />
-    <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Teams\Create.cshtml" />
     <Content Include="Views\Teams\Delete.cshtml" />
     <Content Include="Views\Teams\Details.cshtml" />
@@ -297,16 +288,11 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\UsersEvents\Create.cshtml" />
-    <Content Include="Views\UsersEvents\Delete.cshtml" />
-    <Content Include="Views\UsersEvents\Details.cshtml" />
-    <Content Include="Views\UsersEvents\Edit.cshtml" />
-    <Content Include="Views\UsersEvents\Index.cshtml" />
-    <Content Include="Views\UsersTeams\Create.cshtml" />
-    <Content Include="Views\UsersTeams\Delete.cshtml" />
-    <Content Include="Views\UsersTeams\Details.cshtml" />
-    <Content Include="Views\UsersTeams\Edit.cshtml" />
-    <Content Include="Views\UsersTeams\Index.cshtml" />
+    <Content Include="Views\Events\Create.cshtml" />
+    <Content Include="Views\Events\Delete.cshtml" />
+    <Content Include="Views\Events\Details.cshtml" />
+    <Content Include="Views\Events\Edit.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -320,11 +306,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610041559477_added models.resx">
-      <DependentUpon>201610041559477_added models.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610041721272_newmigration1.resx">
-      <DependentUpon>201610041721272_newmigration1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610041937353_test.resx">
+      <DependentUpon>201610041937353_test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

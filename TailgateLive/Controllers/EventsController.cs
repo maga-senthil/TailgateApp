@@ -17,8 +17,7 @@ namespace TailgateLive.Controllers
         // GET: Events
         public ActionResult Index()
         {
-            var eventDb = db.EventDb.Include(x => x.User);
-            return View(eventDb.ToList());
+            return View(db.EventDb.ToList());
         }
 
         // GET: Events/Details/5
@@ -39,7 +38,6 @@ namespace TailgateLive.Controllers
         // GET: Events/Create
         public ActionResult Create()
         {
-            ViewBag.UserId = new SelectList(db.UserDb, "Id", "UserName");
             return View();
         }
 
@@ -48,7 +46,7 @@ namespace TailgateLive.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments,UserId")] Event @event)
+        public ActionResult Create([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments,HostId")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +55,6 @@ namespace TailgateLive.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.UserId = new SelectList(db.UserDb, "Id", "UserName", @event.UserId);
             return View(@event);
         }
 
@@ -73,7 +70,6 @@ namespace TailgateLive.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.UserId = new SelectList(db.UserDb, "Id", "UserName", @event.UserId);
             return View(@event);
         }
 
@@ -82,7 +78,7 @@ namespace TailgateLive.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments,UserId")] Event @event)
+        public ActionResult Edit([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments,HostId")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +86,6 @@ namespace TailgateLive.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.UserId = new SelectList(db.UserDb, "Id", "UserName", @event.UserId);
             return View(@event);
         }
 
