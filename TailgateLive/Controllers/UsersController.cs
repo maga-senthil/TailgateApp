@@ -17,7 +17,7 @@ namespace TailgateLive.Controllers
         // GET: Users
         public ActionResult Index()
         {
-            var userDb = db.UserDb.Include(u => u.ApplicationUsers);
+            var userDb = db.UserProfile.Include(u => u.ApplicationUsers);
             return View(userDb.ToList());
         }
 
@@ -28,7 +28,7 @@ namespace TailgateLive.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.UserDb.Find(id);
+            User user = db.UserProfile.Find(id);
             if (user == null)
             {
                 return HttpNotFound();
@@ -52,12 +52,12 @@ namespace TailgateLive.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.UserDb.Add(user);
+                db.UserProfile.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.EmailId = new SelectList(db.Users, "Id", "Email", user.EmailId);
+            ViewBag.EmailId = new SelectList(db.Users, "Id", "Email", user.LoginId);
             return View(user);
         }
 
@@ -68,12 +68,12 @@ namespace TailgateLive.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.UserDb.Find(id);
+            User user = db.UserProfile.Find(id);
             if (user == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.EmailId = new SelectList(db.Users, "Id", "Email", user.EmailId);
+            ViewBag.EmailId = new SelectList(db.Users, "Id", "Email", user.LoginId);
             return View(user);
         }
 
@@ -90,7 +90,7 @@ namespace TailgateLive.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.EmailId = new SelectList(db.Users, "Id", "Email", user.EmailId);
+            ViewBag.EmailId = new SelectList(db.Users, "Id", "Email", user.LoginId);
             return View(user);
         }
 
@@ -101,7 +101,7 @@ namespace TailgateLive.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.UserDb.Find(id);
+            User user = db.UserProfile.Find(id);
             if (user == null)
             {
                 return HttpNotFound();
@@ -114,8 +114,8 @@ namespace TailgateLive.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            User user = db.UserDb.Find(id);
-            db.UserDb.Remove(user);
+            User user = db.UserProfile.Find(id);
+            db.UserProfile.Remove(user);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

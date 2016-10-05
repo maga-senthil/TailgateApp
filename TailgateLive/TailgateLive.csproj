@@ -208,6 +208,14 @@
     <Compile Include="Migrations\201610042023304_newmigration1.Designer.cs">
       <DependentUpon>201610042023304_newmigration1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610051739211_newmigration10.cs" />
+    <Compile Include="Migrations\201610051739211_newmigration10.Designer.cs">
+      <DependentUpon>201610051739211_newmigration10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610051802394_newmigration44.cs" />
+    <Compile Include="Migrations\201610051802394_newmigration44.Designer.cs">
+      <DependentUpon>201610051802394_newmigration44.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Event.cs" />
@@ -308,6 +316,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610042023304_newmigration1.resx">
       <DependentUpon>201610042023304_newmigration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610051739211_newmigration10.resx">
+      <DependentUpon>201610051739211_newmigration10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610051802394_newmigration44.resx">
+      <DependentUpon>201610051802394_newmigration44.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
