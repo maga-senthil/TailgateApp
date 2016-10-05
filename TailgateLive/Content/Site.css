@@ -98,7 +98,7 @@ textarea {
     height: 400px;
 }
 .carousel-caption {
-    position: fixed;
+    position: absolute;
     height: 477px;
     background-color: transparent;
     max-width: 550px;
