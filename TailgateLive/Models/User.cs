@@ -16,8 +16,6 @@ namespace TailgateLive.Models
         [Required]
         [DataType(DataType.PostalCode)]
         public int UserZipCode { get; set; }
-        [Required]
-        [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Must be a natural number")]
         public int UserRating { get; set; }
         [ForeignKey ("ApplicationUsers")]
         public string LoginId { get; set; }

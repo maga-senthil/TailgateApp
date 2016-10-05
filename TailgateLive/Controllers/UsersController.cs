@@ -129,7 +129,19 @@ namespace TailgateLive.Controllers
             base.Dispose(disposing);
         }
 
-
+        public ActionResult ProfileSearch()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ProfileSearch(string UserName)
+        {
+            
+           // User user = db.UserProfile.Find(id);
+            var personDetails = db.UserProfile.Where(x => x.UserName == UserName).FirstOrDefault();
+               
+            return View("profile",personDetails);
+        }
 
     }
 }

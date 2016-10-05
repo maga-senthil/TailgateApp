@@ -161,6 +161,7 @@ namespace TailgateLive.Controllers
                     {
                         UserName = model.UserName,
                         UserZipCode = model.UserZipCode,
+                        UserRating = 0,
                         LoginId = user.Id
 
                     };
