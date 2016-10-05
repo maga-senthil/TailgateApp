@@ -125,6 +125,9 @@ namespace TailgateLive.Controllers
             }
             base.Dispose(disposing);
         }
-
+        public ActionResult EventDisplay()
+        {
+            return View();
+        }
     }
 }
