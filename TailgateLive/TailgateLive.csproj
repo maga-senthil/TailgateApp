@@ -204,17 +204,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610042023304_newmigration1.cs" />
-    <Compile Include="Migrations\201610042023304_newmigration1.Designer.cs">
-      <DependentUpon>201610042023304_newmigration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610051739211_newmigration10.cs" />
-    <Compile Include="Migrations\201610051739211_newmigration10.Designer.cs">
-      <DependentUpon>201610051739211_newmigration10.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610051802394_newmigration44.cs" />
-    <Compile Include="Migrations\201610051802394_newmigration44.Designer.cs">
-      <DependentUpon>201610051802394_newmigration44.cs</DependentUpon>
+    <Compile Include="Migrations\201610061230270_dltd migrations.cs" />
+    <Compile Include="Migrations\201610061230270_dltd migrations.Designer.cs">
+      <DependentUpon>201610061230270_dltd migrations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -234,8 +226,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\grilling.jpg" />
-    <Content Include="Images\grilling1.jpg" />
     <Content Include="Images\grilling2.jpg" />
+    <Content Include="Images\tailgate01.jpg" />
     <Content Include="Images\up-arrow.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
@@ -321,14 +313,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610042023304_newmigration1.resx">
-      <DependentUpon>201610042023304_newmigration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610051739211_newmigration10.resx">
-      <DependentUpon>201610051739211_newmigration10.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610051802394_newmigration44.resx">
-      <DependentUpon>201610051802394_newmigration44.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610061230270_dltd migrations.resx">
+      <DependentUpon>201610061230270_dltd migrations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
