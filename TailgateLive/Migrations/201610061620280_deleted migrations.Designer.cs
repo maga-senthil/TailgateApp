@@ -7,13 +7,13 @@ namespace TailgateLive.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class deleteduserfromevent : IMigrationMetadata
+    public sealed partial class deletedmigrations : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(deleteduserfromevent));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(deletedmigrations));
         
         string IMigrationMetadata.Id
         {
-            get { return "201610042003360_deleted user from event"; }
+            get { return "201610061620280_deleted migrations"; }
         }
         
         string IMigrationMetadata.Source

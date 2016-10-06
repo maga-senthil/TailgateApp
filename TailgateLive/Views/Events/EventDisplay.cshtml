@@ -1,10 +1,12 @@
-﻿@{
-   Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@model TailgateLive.Models.Event
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "EventDisplay";
 }
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSUoZb1G7FkVWD_qBzlVhRhxvftCiTPQ4&v=3&callback=initMap">
-</script>
+
 <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <style>
     html,
     body {
@@ -16,12 +18,15 @@
 
     #map {
         min-height: 100%;
-        position:relative;
-align-content:center;
+        min-width: 100%;
+        position: relative;
+        margin-top: 20px;
+        align-content: center;
     }
-    #topScrollBox{
-        min-width:100%;
-        height:200px;
+
+    #topScrollBox {
+        min-width: 100%;
+        height: 200px;
     }
 </style>
 <select id="topScrollBox" multiple class="form-control" style="margin:auto; margin-top:200px; width:500px;">
@@ -31,18 +36,113 @@ align-content:center;
     <option>4</option>
     <option>5</option>
 </select>
-<div class="row" style="height:500px; margin-top:20px;">
-    <div id="map"></div>
-</div>
-<script>
-      var map;
-      function initMap() {
-          // Constructor creates a new map - only center and zoom are required.
-          var mapDiv = document.getElementById('map');
-        var map = new google.maps.Map(mapDiv, {
-          center: {lat: 40.7413549, lng: -73.9980244},
-          zoom: 13
-        });
-      }
-</script>
 
+<div id="mapView" style="position: relative; height:500px;"></div>
+<input id="map" type="button" value="Show your Location" onclick="getLocation();"/>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div class="form-horizontal" id="latlong">
+    <div class="form-group">
+        @Html.LabelFor(model => model.Latitude, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Latitude, new { htmlAttributes = new { @class = "form-control", @id = "latbox"} })
+            @Html.ValidationMessageFor(model => model.Latitude, "", new { @class = "text-danger" })
+        </div>
+    </div> 
+    <div class="form-group">
+        @Html.LabelFor(model => model.Longitude, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Longitude, new { htmlAttributes = new { @class = "form-control", @id = "lngbox"} })
+            @Html.ValidationMessageFor(model => model.Longitude, "", new { @class = "text-danger" })
+        </div>
+    </div> 
+    
+    
+    
+    @*<input size="20" type="text" id="latbox" name="lat" readonly="readonly">*@
+
+
+    @*<p>Longitude: <input size="20" type="text" id="lngbox" name="lng" readonly="readonly"></p>*@
+
+</div>
+
+<div class="form-group" id="submitToModel">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Broadcast Party Location" class="btn btn-default" />
+    </div>
+</div>
+}
+
+
+
+
+
+
+<section id="wrapper">
+    <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiHnIHPy-YWnuBLi7BE_Z1h3x0dHaTGKg&v=3&callback=initMap"></script>
+    <article></article>
+    <script>
+
+        function initMap() {
+            var map;
+            var mapDiv = document.getElementById('mapView');
+            var map = new google.maps.Map(mapDiv, {
+                center: { lat: 40.7413549, lng: -73.9980244 },
+                zoom: 13
+            });
+        }
+
+    function success(position) {
+        var mapcanvas = document.createElement('div');
+        mapcanvas.id = 'map';
+        mapcanvas.style.height = '400px';
+        mapcanvas.style.width = '600px';
+
+            $('article').append(mapcanvas);
+
+        var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+        var options = {
+                zoom: 15,
+                center: coords,
+                mapTypeControl: false,
+                navigationControlOptions: {
+            style: google.maps.NavigationControlStyle.SMALL
+                },
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+    var map = new google.maps.Map(document.getElementById("mapView"), options);
+    var marker = new google.maps.Marker({
+                position: coords,
+        map: map,
+        title: "The Party is here!",
+        draggable: true
+            });
+            google.maps.event.addListener(marker, 'dragend', function (event) {
+        var lng = document.getElementById("lngbox").value = this.getPosition().lng();
+    });
+
+    google.maps.event.addListener(marker, 'dragend', function (event) {
+        var lat =  document.getElementById("latbox").value = this.getPosition().lat();
+    });
+    }
+    function getLocation(){
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(success);
+        } else {
+            error('Geo Location is not supported');
+        }
+    }
+
+    </script>
+</section>
+
+@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+}
+
+@*http://stackoverflow.com/questions/10967465/saving-and-retrieving-googlemap-view-to-sql-in-mvc*@
+@*http://stackoverflow.com/questions/5688745/google-maps-v3-draggable-marker*@
+@*http://stackoverflow.com/questions/8486132/jquery-ajax-passing-value-from-mvc-view-to-controller*@
