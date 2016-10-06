@@ -204,9 +204,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610061230270_dltd migrations.cs" />
-    <Compile Include="Migrations\201610061230270_dltd migrations.Designer.cs">
-      <DependentUpon>201610061230270_dltd migrations.cs</DependentUpon>
+    <Compile Include="Migrations\201610061850015_fixing conflicts.cs" />
+    <Compile Include="Migrations\201610061850015_fixing conflicts.Designer.cs">
+      <DependentUpon>201610061850015_fixing conflicts.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -293,6 +293,8 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Events\EventDisplay.cshtml" />
+    <Content Include="Views\Events\HostEventView.cshtml" />
     <Content Include="Views\Events\Create.cshtml" />
     <Content Include="Views\Events\Delete.cshtml" />
     <Content Include="Views\Events\Details.cshtml" />
@@ -313,8 +315,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610061230270_dltd migrations.resx">
-      <DependentUpon>201610061230270_dltd migrations.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610061850015_fixing conflicts.resx">
+      <DependentUpon>201610061850015_fixing conflicts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
