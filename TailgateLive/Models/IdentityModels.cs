@@ -31,7 +31,7 @@ namespace TailgateLive.Models
         }
         public DbSet<Team> TeamDb { get; set; }
         public DbSet<Event> EventDb { get; set; }
-        public DbSet<User> UserDb { get; set; }
+        public DbSet<User> UserProfile { get; set; }
 
 
     }

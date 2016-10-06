@@ -1,0 +1,56 @@
+﻿@model TailgateLive.Models.User
+
+@{
+    ViewBag.Title = "ProfileSearch";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>Profile</h2>
+
+
+@using (Html.BeginForm("ProfileSearch","Users"))
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <h5 class="col-md-2 control-label"><b>Nickname</b></h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <input type="checkbox" name="vehicle" value="Bike"> i like this person's Event
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+
+
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

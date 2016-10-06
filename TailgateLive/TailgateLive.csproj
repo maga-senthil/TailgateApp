@@ -209,17 +209,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610041559477_added models.cs" />
-    <Compile Include="Migrations\201610041559477_added models.Designer.cs">
-      <DependentUpon>201610041559477_added models.cs</DependentUpon>
+    <Compile Include="Migrations\201610042023304_newmigration1.cs" />
+    <Compile Include="Migrations\201610042023304_newmigration1.Designer.cs">
+      <DependentUpon>201610042023304_newmigration1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610041721272_newmigration1.cs" />
-    <Compile Include="Migrations\201610041721272_newmigration1.Designer.cs">
-      <DependentUpon>201610041721272_newmigration1.cs</DependentUpon>
+    <Compile Include="Migrations\201610051739211_newmigration10.cs" />
+    <Compile Include="Migrations\201610051739211_newmigration10.Designer.cs">
+      <DependentUpon>201610051739211_newmigration10.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610042003360_deleted user from event.cs" />
-    <Compile Include="Migrations\201610042003360_deleted user from event.Designer.cs">
-      <DependentUpon>201610042003360_deleted user from event.cs</DependentUpon>
+    <Compile Include="Migrations\201610051802394_newmigration44.cs" />
+    <Compile Include="Migrations\201610051802394_newmigration44.Designer.cs">
+      <DependentUpon>201610051802394_newmigration44.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -238,6 +238,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\grilling.jpg" />
+    <Content Include="Images\grilling1.jpg" />
+    <Content Include="Images\grilling2.jpg" />
+    <Content Include="Images\up-arrow.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -256,6 +260,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\scripts.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -291,11 +296,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Events\Create.cshtml" />
-    <Content Include="Views\Events\Delete.cshtml" />
-    <Content Include="Views\Events\Details.cshtml" />
-    <Content Include="Views\Events\Edit.cshtml" />
-    <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Teams\Create.cshtml" />
     <Content Include="Views\Teams\Delete.cshtml" />
     <Content Include="Views\Teams\Details.cshtml" />
@@ -306,7 +306,13 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\Events\GroupChat.cshtml" />
+    <Content Include="Views\Events\Create.cshtml" />
+    <Content Include="Views\Events\Delete.cshtml" />
+    <Content Include="Views\Events\Details.cshtml" />
+    <Content Include="Views\Events\Edit.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="Views\Users\Profile.cshtml" />
+    <Content Include="Views\Users\ProfileSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -320,14 +326,14 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610041559477_added models.resx">
-      <DependentUpon>201610041559477_added models.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610042023304_newmigration1.resx">
+      <DependentUpon>201610042023304_newmigration1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610041721272_newmigration1.resx">
-      <DependentUpon>201610041721272_newmigration1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610051739211_newmigration10.resx">
+      <DependentUpon>201610051739211_newmigration10.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610042003360_deleted user from event.resx">
-      <DependentUpon>201610042003360_deleted user from event.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610051802394_newmigration44.resx">
+      <DependentUpon>201610051802394_newmigration44.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -344,7 +350,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52853</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
