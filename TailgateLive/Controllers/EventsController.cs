@@ -38,7 +38,6 @@ namespace TailgateLive.Controllers
         // GET: Events/Create
         public ActionResult Create()
         {
-            ViewBag.UserId = new SelectList(db.UserDb, "Id", "UserName");
             return View();
         }
 
@@ -57,7 +56,6 @@ namespace TailgateLive.Controllers
                 return RedirectToAction("EventDisplay", new { id = eventId });
             }
 
-            
             return View(@event);
         }
 
@@ -81,7 +79,9 @@ namespace TailgateLive.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public ActionResult Edit([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments,Latitude,Longitude")] Event @event)
+
         {
             if (ModelState.IsValid)
             {
@@ -126,6 +126,7 @@ namespace TailgateLive.Controllers
             }
             base.Dispose(disposing);
         }
+
         
         public ActionResult EventDisplay(int? id)
         {
@@ -157,5 +158,6 @@ namespace TailgateLive.Controllers
         {
             return View();
         }
+
     }
 }

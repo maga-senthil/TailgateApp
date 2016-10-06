@@ -64,6 +64,9 @@ namespace TailgateLive.Models
 
     public class RegisterViewModel
     {
+        public string UserName { get; set; }
+        public int UserZipCode { get; set; }
+        public int UserRating { get; set; }
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

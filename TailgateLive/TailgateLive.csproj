@@ -204,13 +204,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610061620280_deleted migrations.cs" />
-    <Compile Include="Migrations\201610061620280_deleted migrations.Designer.cs">
-      <DependentUpon>201610061620280_deleted migrations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610061711554_date nullable in event model.cs" />
-    <Compile Include="Migrations\201610061711554_date nullable in event model.Designer.cs">
-      <DependentUpon>201610061711554_date nullable in event model.cs</DependentUpon>
+    <Compile Include="Migrations\201610061732554_updating.cs" />
+    <Compile Include="Migrations\201610061732554_updating.Designer.cs">
+      <DependentUpon>201610061732554_updating.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -229,6 +225,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\grilling.jpg" />
+    <Content Include="Images\grilling1.jpg" />
+    <Content Include="Images\grilling2.jpg" />
+    <Content Include="Images\up-arrow.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -247,6 +247,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\scripts.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -282,11 +283,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Events\Create.cshtml" />
-    <Content Include="Views\Events\Delete.cshtml" />
-    <Content Include="Views\Events\Details.cshtml" />
-    <Content Include="Views\Events\Edit.cshtml" />
-    <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Teams\Create.cshtml" />
     <Content Include="Views\Teams\Delete.cshtml" />
     <Content Include="Views\Teams\Details.cshtml" />
@@ -297,9 +293,15 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\Events\GroupChat.cshtml" />
     <Content Include="Views\Events\EventDisplay.cshtml" />
     <Content Include="Views\Events\HostEventView.cshtml" />
+    <Content Include="Views\Events\Create.cshtml" />
+    <Content Include="Views\Events\Delete.cshtml" />
+    <Content Include="Views\Events\Details.cshtml" />
+    <Content Include="Views\Events\Edit.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="Views\Users\Profile.cshtml" />
+    <Content Include="Views\Users\ProfileSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -313,11 +315,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610061620280_deleted migrations.resx">
-      <DependentUpon>201610061620280_deleted migrations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610061711554_date nullable in event model.resx">
-      <DependentUpon>201610061711554_date nullable in event model.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610061732554_updating.resx">
+      <DependentUpon>201610061732554_updating.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -334,7 +333,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52853</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
