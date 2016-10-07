@@ -53,7 +53,8 @@ namespace TailgateLive.Controllers
             {
                 db.EventDb.Add(@event);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                int eventId = @event.Id;
+                return RedirectToAction("EventDisplay", new { id = eventId });
             }
 
             return View(@event);
@@ -79,7 +80,9 @@ namespace TailgateLive.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments")] Event @event)
+
+        public ActionResult Edit([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments,Latitude,Longitude")] Event @event)
+
         {
             if (ModelState.IsValid)
             {
@@ -124,6 +127,41 @@ namespace TailgateLive.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+
+        
+        public ActionResult EventDisplay(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Event @event = db.EventDb.Find(id);
+            if (@event == null)
+            {
+                return HttpNotFound();
+            }
+            return View(@event);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EventDisplay([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments,Latitude,Longitude")] Event @event)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(@event).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("HostEventView");
+            }
+            return View(@event);
+        }
+
+        public ActionResult HostEventView()
+        {
+            return View();
+        }
+
 
     }
 }

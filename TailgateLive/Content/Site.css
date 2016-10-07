@@ -50,6 +50,10 @@ textarea {
 }
 
 /* == Carousel == */
+#myCarousel {
+    width: 100%;
+    height: auto;
+}
 .carousel {
     position: relative;
     height: 600px;
