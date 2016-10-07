@@ -7,13 +7,13 @@ namespace TailgateLive.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addedmigrations : IMigrationMetadata
+    public sealed partial class remvdTeamFK : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addedmigrations));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(remvdTeamFK));
         
         string IMigrationMetadata.Id
         {
-            get { return "201610071419319_added migrations"; }
+            get { return "201610071426305_remv'd Team FK"; }
         }
         
         string IMigrationMetadata.Source
