@@ -9,17 +9,6 @@ body {
     padding-right: 5px;
 }
 
-p {
-    font-family: 'Mallanna', serif;
-    font-size: large;
-}
-h3 {
-    font-size: 40px;
-}
-h4 {
-    font-size: 30px;
-}
-
 /* == Inputs == */
 .input-group {
     font-family: 'Oswald', sans-serif;
@@ -121,15 +110,32 @@ textarea {
     position: relative;
     height: 600px;
 }
+.carousel p {
+    font-family: 'Mallanna', serif;
+    font-size: large;
+}
+.carousel h3 {
+    font-size: 40px;
+}
+.carousel h4 {
+    font-size: 30px;
+}
 .carousel .container {
     position: relative;
     z-index: 9;
 }
-.carousel-inner {
+/*.carousel-inner {
     position: relative;
     height: 600px;
     width: 100%;
     overflow: hidden;
+}*/
+.carousel-inner {
+    position: relative;
+    height: 642px;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 42px;
 }
 .carousel .item {
     height: 400px;
