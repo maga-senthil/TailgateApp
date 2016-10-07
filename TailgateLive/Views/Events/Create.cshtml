@@ -40,9 +40,7 @@
                 @Html.ValidationMessageFor(model => model.EventRating, "", new { @class = "text-danger" })
             </div>
         </div>*@
-
-
-        <div class="form-group">
+      @*<div class="form-group">
             <div class="col-md-10">
                 @Html.LabelFor(model => model.EventStatus, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="checkbox">
@@ -50,9 +48,46 @@
                     @Html.ValidationMessageFor(model => model.EventStatus, "", new { @class = "text-danger" })
                 </div>
             </div>
+        </div>*@
+        
+        <div class="teamDropdown">
+            <button onclick="myFunction()" class="dropdownbtn">Pick a team</button>
+            <div id="myDropdown" class="dropdown-content">
+                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                <a href="#" onclick="" id="ArizonaCardinals">Arizona Cardinals</a>
+                <a href="#" onclick="" id="AtlantaFalcons">Atlanta Falcons</a>
+                <a href="#" onclick="" id="BaltimoreRavens">Baltimore Ravens</a>
+                <a href="#" onclick="" id="BuffaloBills">Buffalo Bills</a>
+                <a href="#" onclick="" id="CarolinaPanthers">Carolina Panthers</a>
+                <a href="#" onclick="" id="ChicagoBears">Chicago Bears</a>
+                <a href="#" onclick="" id="CincinnatiBengals">Cincinnati Bengals</a>
+                <a href="#" onclick="" id="ClevelandBrowns">Cleveland Browns</a>
+                <a href="#" onclick="" id="DallasCowboys">Dallas Cowboys</a>
+                <a href="#" onclick="" id="DenverBroncos">Denver Broncos</a>
+                <a href="#" onclick="" id="DetroitLions">Detroit Lions</a>
+                <a href="#" onclick="" id="GreenBayPackers">Greenbay Packers</a>
+                <a href="#" onclick="" id="HoustonTexans">Houston Texans</a>
+                <a href="#" onclick="" id="IndianapolisColts">Indianapolis Colts</a>
+                <a href="#" onclick="" id="JacksonvilleJaguars">Jacksonville Jaguars</a>
+                <a href="#" onclick="" id="KansasCityChiefs">Kansas City Chiefs</a>
+                <a href="#" onclick="" id="LosAngelesRams">Los Angeles Rams</a>
+                <a href="#" onclick="" id="MiamiDolphins">Miami Dolphins</a>
+                <a href="#" onclick="" id="MinnesotaVikings">Minnesota Vikings</a>
+                <a href="#" onclick="" id="NewEnglandPatriots">New England Patriots</a>
+                <a href="#" onclick="" id="NewOrleansSaints">New Orleans Saints</a>
+                <a href="#" onclick="" id="NewYorkGiants">New York Giants</a>
+                <a href="#" onclick="" id="NewYorkJets">New York Jets</a>
+                <a href="#" onclick="" id="OaklandRaiders">Oakland Raiders</a>
+                <a href="#" onclick="" id="PhiladelphiaEagles">Philadelphia Eagles</a>
+                <a href="#" onclick="" id="PittsburghSteelers">Pittsburgh Steelers</a>
+                <a href="#" onclick="" id="SanDiegoChargers">San Diego Chargers</a>
+                <a href="#" onclick="" id="SanFrancisco49ers">San Francisco 49ers</a>
+                <a href="#" onclick="" id="SeattleSeahawks">Seattle Seahawks</a>
+                <a href="#" onclick="" id="TampaBayBuccaneers">Tampa Bay Buccaneers</a>
+                <a href="#" onclick="" id="TennesseeTitans">Tennessee Titans</a>
+                <a href="#" onclick="" id="WashingtonRedskins">Washington Redskins</a>
+            </div>
         </div>
-
-
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -68,4 +103,24 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    function filterFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("myDropdown");
+        a = div.getElementsByTagName("a");
+        for (i = 0; i < a.length; i++) {
+            if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+            } else {
+                a[i].style.display = "none";
+            }
+        }
+    }
+</script>
 }
