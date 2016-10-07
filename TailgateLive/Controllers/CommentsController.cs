@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -51,15 +53,27 @@ namespace TailgateLive.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Comments,UserId,EventId")] Comment comment)
         {
+            string userId = User.Identity.GetUserId();
+            User currentUser = db.UserProfile.FirstOrDefault(x => x.LoginId == userId);
+          
+
             if (ModelState.IsValid)
             {
+
+              comment.Comments = comment.Comments;
+              comment.UserId = currentUser.Id;
+              comment.EventId = comment.EventId;
+           
                 db.Comments.Add(comment);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //int commentId = comment.Id;
+
+                return RedirectToAction("CommentSearch", new { EventId = comment .EventId  });
             }
 
-            ViewBag.EventId = new SelectList(db.EventDb, "Id", "EventTitle", comment.EventId);
-            ViewBag.UserId = new SelectList(db.UserProfile, "Id", "UserName", comment.UserId);
+            //ViewBag.EventId = new SelectList(db.EventDb, "Id", "EventTitle", comment.EventId);
+            //ViewBag.UserId = new SelectList(db.UserProfile, "Id", "UserName", comment.UserId);
+            // return View(comment);
             return View(comment);
         }
 
@@ -132,5 +146,34 @@ namespace TailgateLive.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult EventIndex(int EventId)
+        {
+            var EventDetails = db.EventDb.Where(x=> x.Id ==EventId).FirstOrDefault();
+            return View(EventDetails);
+        }
+        public ActionResult CommentSearch(int EventId)
+        {           
+            return View(new CommentSearchModel() { EventId = EventId });
+        }
+        [HttpPost]
+        public ActionResult CommentSearch(CommentSearchModel model)
+        {
+            var PeopleComments = db.Comments.Where(y => y.EventId == model.EventId).ToList();
+            model.List_Commments = PeopleComments;
+            var userId = User.Identity.GetUserId();
+            var comment = new Comment
+            {
+                UserId = db.UserProfile.Where(x => x.LoginId == userId).FirstOrDefault().Id,
+                EventId = model.EventId,
+                Comments = model.CommentString
+            };
+            db.Comments.Add(comment);
+            db.SaveChanges();
+
+            return View(model);
+
+        }
+
     }
 }
