@@ -22,6 +22,8 @@ namespace TailgateLive.Models
         public bool EventStatus { get; set; }
         [Required]
         public string EventComments { get; set; }
+        public ICollection<Team> Teams { get; set; }
         public ICollection <User> Users { get; set; }
+
     }
 }

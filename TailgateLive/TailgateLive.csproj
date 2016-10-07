@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -216,13 +217,40 @@
     <Compile Include="Migrations\201610051802394_newmigration44.Designer.cs">
       <DependentUpon>201610051802394_newmigration44.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610061420474_newmigration-06.cs" />
+    <Compile Include="Migrations\201610061420474_newmigration-06.Designer.cs">
+      <DependentUpon>201610061420474_newmigration-06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610061529484_newmigration55.cs" />
+    <Compile Include="Migrations\201610061529484_newmigration55.Designer.cs">
+      <DependentUpon>201610061529484_newmigration55.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610061651584_newmigration99.cs" />
+    <Compile Include="Migrations\201610061651584_newmigration99.Designer.cs">
+      <DependentUpon>201610061651584_newmigration99.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610061728531_newmigration551.cs" />
+    <Compile Include="Migrations\201610061728531_newmigration551.Designer.cs">
+      <DependentUpon>201610061728531_newmigration551.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610070025005_newmigration7.cs" />
+    <Compile Include="Migrations\201610070025005_newmigration7.Designer.cs">
+      <DependentUpon>201610070025005_newmigration7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610070037331_newmigration12.cs" />
+    <Compile Include="Migrations\201610070037331_newmigration12.Designer.cs">
+      <DependentUpon>201610070037331_newmigration12.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Event.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Team.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Scripts\Models\AccountViewModels.cs" />
+    <Compile Include="Scripts\Models\Comment.cs" />
+    <Compile Include="Scripts\Models\CommentSearchResultModel.cs" />
+    <Compile Include="Scripts\Models\Event.cs" />
+    <Compile Include="Scripts\Models\IdentityModels.cs" />
+    <Compile Include="Scripts\Models\ManageViewModels.cs" />
+    <Compile Include="Scripts\Models\ProfileViewModel.cs" />
+    <Compile Include="Scripts\Models\Team.cs" />
+    <Compile Include="Scripts\Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -308,6 +336,14 @@
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Users\Profile.cshtml" />
     <Content Include="Views\Users\ProfileSearch.cshtml" />
+    <Content Include="Views\Users\EventCommentSearch.cshtml" />
+    <Content Include="Views\Users\EventCommentSearchView.cshtml" />
+    <Content Include="Views\Users\CommentSearch.cshtml" />
+    <Content Include="Views\Comments\Create.cshtml" />
+    <Content Include="Views\Comments\Delete.cshtml" />
+    <Content Include="Views\Comments\Details.cshtml" />
+    <Content Include="Views\Comments\Edit.cshtml" />
+    <Content Include="Views\Comments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -329,6 +365,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610051802394_newmigration44.resx">
       <DependentUpon>201610051802394_newmigration44.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610061420474_newmigration-06.resx">
+      <DependentUpon>201610061420474_newmigration-06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610061529484_newmigration55.resx">
+      <DependentUpon>201610061529484_newmigration55.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610061651584_newmigration99.resx">
+      <DependentUpon>201610061651584_newmigration99.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610061728531_newmigration551.resx">
+      <DependentUpon>201610061728531_newmigration551.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610070025005_newmigration7.resx">
+      <DependentUpon>201610070025005_newmigration7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610070037331_newmigration12.resx">
+      <DependentUpon>201610070037331_newmigration12.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
