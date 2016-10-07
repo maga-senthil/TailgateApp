@@ -20,9 +20,13 @@ namespace TailgateLive.Models
         public bool EventStatus { get; set; }
         
         public string EventComments { get; set; }
+
+        public ICollection<Team> Teams { get; set; }
+
         public decimal Latitude { get; set; }
         public decimal Longitude { get; set; }
         public ICollection<User> Users { get; set; }
+
 
 
     }

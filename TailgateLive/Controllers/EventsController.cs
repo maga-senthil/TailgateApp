@@ -21,6 +21,7 @@ namespace TailgateLive.Controllers
 
         private ApplicationDbContext db = new ApplicationDbContext();
 
+
         // GET: Events
         public ActionResult Index()
         {
@@ -54,6 +55,7 @@ namespace TailgateLive.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public ActionResult Create([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments,Users")] Event @event)
         {
 
@@ -143,6 +145,8 @@ namespace TailgateLive.Controllers
             base.Dispose(disposing);
         }
 
+
+
         
         public ActionResult EventDisplay(int? id)
         {
@@ -174,6 +178,7 @@ namespace TailgateLive.Controllers
         {
             return View();
         }
+
 
     }
 }

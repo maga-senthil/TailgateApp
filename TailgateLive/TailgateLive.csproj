@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -204,15 +205,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610061732554_updating.cs" />
-    <Compile Include="Migrations\201610061732554_updating.Designer.cs">
-      <DependentUpon>201610061732554_updating.cs</DependentUpon>
+    <Compile Include="Migrations\201610071350407_newmigration.cs" />
+    <Compile Include="Migrations\201610071350407_newmigration.Designer.cs">
+      <DependentUpon>201610071350407_newmigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\CommentSearchResultModel.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ProfileViewModel.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -226,8 +230,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\grilling.jpg" />
-    <Content Include="Images\grilling1.jpg" />
     <Content Include="Images\grilling2.jpg" />
+    <Content Include="Images\tailgate01.jpg" />
     <Content Include="Images\up-arrow.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
@@ -302,6 +306,14 @@
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Users\Profile.cshtml" />
     <Content Include="Views\Users\ProfileSearch.cshtml" />
+    <Content Include="Views\Users\EventCommentSearch.cshtml" />
+    <Content Include="Views\Users\EventCommentSearchView.cshtml" />
+    <Content Include="Views\Users\CommentSearch.cshtml" />
+    <Content Include="Views\Comments\Create.cshtml" />
+    <Content Include="Views\Comments\Delete.cshtml" />
+    <Content Include="Views\Comments\Details.cshtml" />
+    <Content Include="Views\Comments\Edit.cshtml" />
+    <Content Include="Views\Comments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -315,8 +327,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610061732554_updating.resx">
-      <DependentUpon>201610061732554_updating.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610071350407_newmigration.resx">
+      <DependentUpon>201610071350407_newmigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
