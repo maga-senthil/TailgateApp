@@ -1,5 +1,9 @@
 ﻿$(document).ready(function () {
 
+    var getTeam(NFLTeam) = function(){
+
+    }
+
     $(window).scroll(function () {
         if ($(this).scrollTop() > 250) {
             $('.scrollToTop').fadeIn();
