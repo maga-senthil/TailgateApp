@@ -3,7 +3,7 @@ namespace TailgateLive.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class fixingconflicts : DbMigration
+    public partial class rmvdmigrations : DbMigration
     {
         public override void Up()
         {
