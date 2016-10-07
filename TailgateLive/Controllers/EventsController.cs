@@ -6,17 +6,25 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 using TailgateLive.Models;
+using System.Web.Security;
+using System.Data.Entity.Infrastructure;
 
 namespace TailgateLive.Controllers
 {
     public class EventsController : Controller
     {
+        
+
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Events
         public ActionResult Index()
         {
+
             return View(db.EventDb.ToList());
         }
 
@@ -46,11 +54,18 @@ namespace TailgateLive.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments")] Event @event)
+        public ActionResult Create([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments,Users")] Event @event)
         {
+
+            
+            string userId = User.Identity.GetUserId();
+            User currentUser = db.UserProfile.FirstOrDefault(x => x.LoginId == userId);
+            @event.Users = new List<User>();
+            @event.Users.Add(currentUser);
             if (ModelState.IsValid)
-            {
+            {                
                 db.EventDb.Add(@event);
+                currentUser.Events.Add(@event);
                 db.SaveChanges();
                 int eventId = @event.Id;
                 return RedirectToAction("EventDisplay", new { id = eventId });
@@ -58,6 +73,7 @@ namespace TailgateLive.Controllers
 
             return View(@event);
         }
+        
 
         // GET: Events/Edit/5
         public ActionResult Edit(int? id)
@@ -80,7 +96,7 @@ namespace TailgateLive.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public ActionResult Edit([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments,Latitude,Longitude")] Event @event)
+        public ActionResult Edit([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments,Latitude,Longitude,UserId")] Event @event)
 
         {
             if (ModelState.IsValid)

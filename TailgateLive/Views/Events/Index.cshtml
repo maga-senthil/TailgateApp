@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table" id="basicIndex">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.EventTitle)
@@ -29,29 +29,70 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.EventTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EventDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EventRating)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EventStatus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EventComments)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "EventDisplay", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventComments)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id}, new { @id="CreatorEdit"}) |
+                @Html.ActionLink("Details", "EventDisplay", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @id="CreatorDelete"})
+            </td>
+        </tr>
+    }
 
 </table>
+
+
+<script type="text/javascript">
+    function getCurrentUser() {
+        var currentUser = User.Identity.GetUserId();
+        //matchUserId(currentUser);
+        $(document).ready(function(currentUser){
+            var model = @Html.Raw(Json.Encode(Model));
+            var creatorPermission;
+            var notCreatorPermission;
+            $.each(model, function(key, value){
+                if(key.value === user){
+                    creatorPermission = setVisibility('','');
+                    return(creatorPermission);
+                }
+                else{
+                    notCreatorPermission = setVisibility('none','none');
+                    return(notCreatorPermission);
+                }
+            })
+
+        })
+    }
+    @*function matchUserId(user) {
+        var model = @Html.Raw(Json.Encode(Model));
+        $.each(model, function(key, value){
+            if(key.value === user){
+                setVisibility('','');
+            }
+            else{
+                setVisibility('none','none');
+            }
+        })
+    }*@
+    function setVisibility(creatorCanDelete, creatorCanEdit) {
+        document.getElementById('CreatorEdit').style.display = creatorCanEdit;
+        document.getElementById('CreatorDelete').style.display = creatorCanDelete;
+
+    }
+</script>
