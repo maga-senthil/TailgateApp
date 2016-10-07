@@ -11,6 +11,7 @@ namespace TailgateLive.Models
         [Key]
         public int Id { get; set; }
         public string TeamName { get; set; }
-        public ICollection <User> Users { get; set; }
+        public ICollection<User> Users { get; set; }
+        public ICollection<Team> Teams { get; set; }
     }
 }

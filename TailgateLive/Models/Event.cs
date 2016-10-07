@@ -26,9 +26,6 @@ namespace TailgateLive.Models
         public decimal Latitude { get; set; }
         public decimal Longitude { get; set; }
 
-        [ForeignKey("Team")]
-        public int TeamId { get; set; }
-        public Team Team { get; set; }
         public ICollection<User> Users { get; set; }
     }
 }
