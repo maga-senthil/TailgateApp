@@ -204,9 +204,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610061850015_fixing conflicts.cs" />
-    <Compile Include="Migrations\201610061850015_fixing conflicts.Designer.cs">
-      <DependentUpon>201610061850015_fixing conflicts.cs</DependentUpon>
+    <Compile Include="Migrations\201610062316158_Dlt%27d Migration.cs" />
+    <Compile Include="Migrations\201610062316158_Dlt%27d Migration.Designer.cs">
+      <DependentUpon>201610062316158_Dlt%27d Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -227,6 +227,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\grilling.jpg" />
     <Content Include="Images\grilling2.jpg" />
+    <Content Include="Images\searchicon.png" />
     <Content Include="Images\tailgate01.jpg" />
     <Content Include="Images\up-arrow.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
@@ -315,8 +316,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610061850015_fixing conflicts.resx">
-      <DependentUpon>201610061850015_fixing conflicts.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610062316158_Dlt%27d Migration.resx">
+      <DependentUpon>201610062316158_Dlt%27d Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

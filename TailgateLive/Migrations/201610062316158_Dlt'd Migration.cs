@@ -3,7 +3,7 @@ namespace TailgateLive.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class fixingconflicts : DbMigration
+    public partial class DltdMigration : DbMigration
     {
         public override void Up()
         {
@@ -19,6 +19,18 @@ namespace TailgateLive.Migrations
                         EventComments = c.String(),
                         Latitude = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Longitude = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        TeamId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Teams", t => t.TeamId, cascadeDelete: true)
+                .Index(t => t.TeamId);
+            
+            CreateTable(
+                "dbo.Teams",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        TeamName = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -95,15 +107,6 @@ namespace TailgateLive.Migrations
                 .Index(t => t.RoleId);
             
             CreateTable(
-                "dbo.Teams",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        TeamName = c.String(),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
@@ -127,33 +130,34 @@ namespace TailgateLive.Migrations
                 .Index(t => t.Event_Id);
             
             CreateTable(
-                "dbo.TeamUsers",
+                "dbo.UserTeams",
                 c => new
                     {
-                        Team_Id = c.Int(nullable: false),
                         User_Id = c.Int(nullable: false),
+                        Team_Id = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => new { t.Team_Id, t.User_Id })
-                .ForeignKey("dbo.Teams", t => t.Team_Id, cascadeDelete: true)
+                .PrimaryKey(t => new { t.User_Id, t.Team_Id })
                 .ForeignKey("dbo.Users", t => t.User_Id, cascadeDelete: true)
-                .Index(t => t.Team_Id)
-                .Index(t => t.User_Id);
+                .ForeignKey("dbo.Teams", t => t.Team_Id, cascadeDelete: true)
+                .Index(t => t.User_Id)
+                .Index(t => t.Team_Id);
             
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.TeamUsers", "User_Id", "dbo.Users");
-            DropForeignKey("dbo.TeamUsers", "Team_Id", "dbo.Teams");
+            DropForeignKey("dbo.Events", "TeamId", "dbo.Teams");
+            DropForeignKey("dbo.UserTeams", "Team_Id", "dbo.Teams");
+            DropForeignKey("dbo.UserTeams", "User_Id", "dbo.Users");
             DropForeignKey("dbo.UserEvents", "Event_Id", "dbo.Events");
             DropForeignKey("dbo.UserEvents", "User_Id", "dbo.Users");
             DropForeignKey("dbo.Users", "LoginId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
-            DropIndex("dbo.TeamUsers", new[] { "User_Id" });
-            DropIndex("dbo.TeamUsers", new[] { "Team_Id" });
+            DropIndex("dbo.UserTeams", new[] { "Team_Id" });
+            DropIndex("dbo.UserTeams", new[] { "User_Id" });
             DropIndex("dbo.UserEvents", new[] { "Event_Id" });
             DropIndex("dbo.UserEvents", new[] { "User_Id" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
@@ -163,15 +167,16 @@ namespace TailgateLive.Migrations
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.Users", new[] { "LoginId" });
-            DropTable("dbo.TeamUsers");
+            DropIndex("dbo.Events", new[] { "TeamId" });
+            DropTable("dbo.UserTeams");
             DropTable("dbo.UserEvents");
             DropTable("dbo.AspNetRoles");
-            DropTable("dbo.Teams");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.Users");
+            DropTable("dbo.Teams");
             DropTable("dbo.Events");
         }
     }

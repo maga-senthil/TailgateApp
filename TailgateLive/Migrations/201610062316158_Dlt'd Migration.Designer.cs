@@ -7,13 +7,13 @@ namespace TailgateLive.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class fixingconflicts : IMigrationMetadata
+    public sealed partial class DltdMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(fixingconflicts));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DltdMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201610061850015_fixing conflicts"; }
+            get { return "201610062316158_Dlt'd Migration"; }
         }
         
         string IMigrationMetadata.Source
