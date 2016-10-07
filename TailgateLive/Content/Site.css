@@ -1,11 +1,23 @@
 ﻿/* == Body == */
 body {
+    font-family: 'Mallanna', sans-serif;
     padding-top: 50px;
     padding-bottom: 20px;
 }
 .body-content {
     padding-left: 5px;
     padding-right: 5px;
+}
+
+p {
+    font-family: 'Mallanna', serif;
+    font-size: large;
+}
+h3 {
+    font-size: 40px;
+}
+h4 {
+    font-size: 30px;
 }
 
 /* == Inputs == */
@@ -25,7 +37,54 @@ textarea {
 .dl-horizontal dt {
     white-space: normal;
 }
-
+.teamInput{
+	font-family: sans-serif;
+	position: relative;
+	margin: 100px;
+}
+.typeahead, .tt-query, .tt-hint {
+	border: 2px solid #CCCCCC;
+	border-radius: 8px;
+	font-size: 24px;
+	height: 30px;
+	line-height: 30px;
+	outline: medium none;
+	padding: 8px 12px;
+	width: 396px;
+}
+.typeahead {
+	background-color: #FFFFFF;
+}
+.typeahead:focus {
+	border: 2px solid #0097CF;
+}
+.tt-query {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+	color: #999999;
+}
+.tt-dropdown-menu {
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	margin-top: 12px;
+	padding: 8px 0;
+	width: 422px;
+}
+.tt-suggestion {
+	font-size: 24px;
+	line-height: 24px;
+	padding: 3px 20px;
+}
+.tt-suggestion.tt-is-under-cursor {
+	background-color: #0097CF;
+	color: #FFFFFF;
+}
+.tt-suggestion p {
+	margin: 0;
+}
 /* == Navbar == */
 .navbar-inverse {
     background-color: rgba(255, 255, 255, 0.66);
@@ -34,7 +93,8 @@ textarea {
 .navbar-inverse .navbar-brand {
     color: rgb(0, 0, 0);
     font-weight: bold;
-    font-size: x-large;
+    font-family: fantasy,sans-serif;
+    font-size: 45px;
 }
 .navbar-inverse .navbar-brand:hover {
     color: #ffd800;
@@ -105,12 +165,23 @@ textarea {
     background-color: #0026ff;
     border-color: #0026ff;
 }
-.chillGrillP {
-    font-size: 20px;
+#tailgatePara {
+    font-size: 24px;
     font-weight:bold;
     color: #ffffff;
     text-shadow: 0 2px 2px black;
-
+}
+#chillGrillPara {
+    font-size: 24px;
+    font-weight:bold;
+    color: #ffffff;
+    text-shadow: 0 2px 2px black;
+}
+#hostPara {
+    font-size: 22px;
+    font-weight:bold;
+    color: #ffffff;
+    text-shadow: 0 2px 2px black;
 }
 /* == DropdownOptions == */
 .dropdownbtn {
