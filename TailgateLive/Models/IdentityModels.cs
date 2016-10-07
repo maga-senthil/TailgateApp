@@ -32,7 +32,7 @@ namespace TailgateLive.Models
         public DbSet<Team> TeamDb { get; set; }
         public DbSet<Event> EventDb { get; set; }
         public DbSet<User> UserProfile { get; set; }
-        public DbSet <Comment>Comments { get; set; }
-
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<NFLGameSchedule> NFLGameSchedulesDb { get; set; }
     }
 }

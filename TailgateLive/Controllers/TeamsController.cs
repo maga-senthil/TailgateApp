@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using TailgateLive.Models;
-using System.Threading.Tasks;
 
 namespace TailgateLive.Controllers
 {
@@ -47,24 +46,25 @@ namespace TailgateLive.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //public ActionResult CreateOld([Bind(Include = "Id,TeamName")] Team team)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.TeamDb.Add(team);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    return View(team);
-        //}
-
-        public ActionResult Create([Bind(Include = "Id,TeamName")] Team team)
+        public ActionResult Create([Bind(Include = "Id,Code,FullName,ShortName")] Team team)
         {
+            //if (ModelState.IsValid)
+            //{
+            //    db.TeamDb.Add(team);
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
+
+            //return View(team);
+
             Team tempTeam = new Team();
-            foreach (string t in GetTeamNames())
+            List<List<string>> teamsList = new List<List<string>>();
+            teamsList = NFL_API.GET_NFL.RunAsyncNFLTeam();
+            for (int i = 0; i < teamsList.Count; i++)
             {
-                tempTeam.TeamName = t;
+                tempTeam.Code = teamsList[i][0];
+                tempTeam.FullName = teamsList[i][1];
+                tempTeam.ShortName = teamsList[i][2];
                 db.TeamDb.Add(tempTeam);
                 db.SaveChanges();
             }
@@ -74,19 +74,6 @@ namespace TailgateLive.Controllers
             }
 
             return View(team);
-        }
-        public List<string> GetTeamNames()
-        {
-            List<List<string>> teamsList = new List<List<string>>();
-            teamsList = NFL_API.GET_NFL.RunAsyncNFLTeam();
-            List<string> teamNameLong = new List<string>();
-            string name;
-            for (int i = 0; i < teamsList.Count; i++)
-            {
-                name = teamsList[i][1];
-                teamNameLong.Add(name);
-            }
-            return teamNameLong;
         }
 
         // GET: Teams/Edit/5
@@ -109,7 +96,7 @@ namespace TailgateLive.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,TeamName")] Team team)
+        public ActionResult Edit([Bind(Include = "Id,Code,FullName,ShortName")] Team team)
         {
             if (ModelState.IsValid)
             {

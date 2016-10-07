@@ -1,0 +1,88 @@
+﻿@model TailgateLive.Models.NFLGameSchedule
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>NFLGameSchedule</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.gameId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gameId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gameWeek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gameWeek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gameDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gameDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.awayTeam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.awayTeam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.homeTeam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.homeTeam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gameTimeET)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gameTimeET)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tvStation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tvStation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.winner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.winner)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

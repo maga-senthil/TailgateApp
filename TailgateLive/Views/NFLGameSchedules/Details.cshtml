@@ -1,0 +1,82 @@
+﻿@model TailgateLive.Models.NFLGameSchedule
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NFLGameSchedule</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.gameId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gameId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gameWeek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gameWeek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gameDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gameDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.awayTeam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.awayTeam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.homeTeam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.homeTeam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gameTimeET)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gameTimeET)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tvStation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tvStation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.winner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.winner)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
