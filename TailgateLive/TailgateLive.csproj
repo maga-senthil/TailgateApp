@@ -205,12 +205,24 @@
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NFLGameSchedulesController.cs" />
     <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-
+    <Compile Include="Migrations\201610071550331_new1.cs" />
+    <Compile Include="Migrations\201610071550331_new1.Designer.cs">
+      <DependentUpon>201610071550331_new1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610071553285_new2.cs" />
+    <Compile Include="Migrations\201610071553285_new2.Designer.cs">
+      <DependentUpon>201610071553285_new2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610071722122_new3.cs" />
+    <Compile Include="Migrations\201610071722122_new3.Designer.cs">
+      <DependentUpon>201610071722122_new3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -218,6 +230,7 @@
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\NFLGameSchedule.cs" />
     <Compile Include="Models\ProfileViewModel.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\User.cs" />
@@ -291,11 +304,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Teams\Create.cshtml" />
-    <Content Include="Views\Teams\Delete.cshtml" />
-    <Content Include="Views\Teams\Details.cshtml" />
-    <Content Include="Views\Teams\Edit.cshtml" />
-    <Content Include="Views\Teams\Index.cshtml" />
     <Content Include="Views\Users\Create.cshtml" />
     <Content Include="Views\Users\Delete.cshtml" />
     <Content Include="Views\Users\Details.cshtml" />
@@ -318,6 +326,16 @@
     <Content Include="Views\Comments\Details.cshtml" />
     <Content Include="Views\Comments\Edit.cshtml" />
     <Content Include="Views\Comments\Index.cshtml" />
+    <Content Include="Views\Teams\Create.cshtml" />
+    <Content Include="Views\Teams\Delete.cshtml" />
+    <Content Include="Views\Teams\Details.cshtml" />
+    <Content Include="Views\Teams\Edit.cshtml" />
+    <Content Include="Views\Teams\Index.cshtml" />
+    <Content Include="Views\NFLGameSchedules\Create.cshtml" />
+    <Content Include="Views\NFLGameSchedules\Delete.cshtml" />
+    <Content Include="Views\NFLGameSchedules\Details.cshtml" />
+    <Content Include="Views\NFLGameSchedules\Edit.cshtml" />
+    <Content Include="Views\NFLGameSchedules\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -330,7 +348,17 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
-
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610071550331_new1.resx">
+      <DependentUpon>201610071550331_new1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610071553285_new2.resx">
+      <DependentUpon>201610071553285_new2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610071722122_new3.resx">
+      <DependentUpon>201610071722122_new3.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

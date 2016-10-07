@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -10,8 +11,8 @@ namespace TailgateLive.Models
     {
         [Key]
         public int Id { get; set; }
-        public string TeamName { get; set; }
-        public ICollection<User> Users { get; set; }
-        public ICollection<Team> Teams { get; set; }
+        public string Code { get; set; }
+        public string FullName { get; set; }
+        public string ShortName { get; set; }
     }
 }
