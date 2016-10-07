@@ -210,10 +210,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610071403485_new1.cs" />
-    <Compile Include="Migrations\201610071403485_new1.Designer.cs">
-      <DependentUpon>201610071403485_new1.cs</DependentUpon>
-    </Compile>
+
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -237,6 +234,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\grilling.jpg" />
     <Content Include="Images\grilling2.jpg" />
+    <Content Include="Images\searchicon.png" />
     <Content Include="Images\tailgate01.jpg" />
     <Content Include="Images\up-arrow.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
@@ -332,11 +330,7 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610071403485_new1.resx">
-      <DependentUpon>201610071403485_new1.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
+
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
