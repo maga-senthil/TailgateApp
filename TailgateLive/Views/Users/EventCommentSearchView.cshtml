@@ -1,0 +1,25 @@
+﻿@model IEnumerable< TailgateLive.Models.Comment>
+
+@{
+    ViewBag.Title = "EventCommentSearchView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EventCommentsSearchView</h2>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Comments)
+</dt>
+@foreach (var item in Model)
+{
+    <dd>
+        @Html.DisplayFor(modelItem => item.Comments)
+    </dd>
+}
+
+
+
+
+
+
+

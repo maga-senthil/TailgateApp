@@ -133,14 +133,54 @@ namespace TailgateLive.Controllers
         {
             return View();
         }
+
         [HttpPost]
-        public ActionResult ProfileSearch(string UserName)
+        public ActionResult ProfileSearch(string UserName,ProfileViewModel model)
         {
-            
-           // User user = db.UserProfile.Find(id);
+
             var personDetails = db.UserProfile.Where(x => x.UserName == UserName).FirstOrDefault();
-               
+
+
+            var comment = new Comment
+            {
+                UserId = personDetails.Id,
+                Comments = model.Comments
+            };
+            db.Comments.Add(comment);
+            db.SaveChangesAsync();
+
+
+
+
             return View("profile",personDetails);
+        }
+
+        public ActionResult CommentSearch()
+        {
+            return View();
+        }
+
+        [HttpPost]
+
+        public ActionResult CommentSearch(int UserId,int EventId)
+        {
+           
+            var PeopleComments = db.Comments.Where(y => y.UserId == UserId && y.EventId == EventId).ToList();
+            CommentSearchResultModel model = new CommentSearchResultModel()
+            {
+                List_Commments = PeopleComments
+            };
+            var comment = new Comment
+            {
+                UserId = model.UserId,
+                EventId = model.EventId,
+                Comments = model.Comments
+            };
+            db.Comments.Add(comment);
+            db.SaveChangesAsync();
+
+            return View(model);
+
         }
 
     }
