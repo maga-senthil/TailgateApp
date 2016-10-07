@@ -20,6 +20,10 @@ namespace TailgateLive.Models
         public string EventComments { get; set; }
         public decimal Latitude { get; set; }
         public decimal Longitude { get; set; }
+<<<<<<< HEAD
+=======
+
+>>>>>>> f62ea1441caa9a70b33f696b75cd114f6aed5b93
         public ICollection<User> Users { get; set; }
         [ForeignKey("NFLGameSchedule")]
         public int NFLGameScheduleId { get; set; }
