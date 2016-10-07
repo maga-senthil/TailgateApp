@@ -10,111 +10,116 @@ using TailgateLive.Models;
 
 namespace TailgateLive.Controllers
 {
-    public class EventsController : Controller
+    public class CommentsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-
-        // GET: Events
+        // GET: Comments
         public ActionResult Index()
         {
-            return View(db.EventDb.ToList());
+            var comments = db.Comments.Include(c => c.Events).Include(c => c.User);
+            return View(comments.ToList());
         }
 
-        // GET: Events/Details/5
+        // GET: Comments/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Event @event = db.EventDb.Find(id);
-            if (@event == null)
+            Comment comment = db.Comments.Find(id);
+            if (comment == null)
             {
                 return HttpNotFound();
             }
-            return View(@event);
+            return View(comment);
         }
 
-        // GET: Events/Create
+        // GET: Comments/Create
         public ActionResult Create()
         {
+            ViewBag.EventId = new SelectList(db.EventDb, "Id", "EventTitle");
+            ViewBag.UserId = new SelectList(db.UserProfile, "Id", "UserName");
             return View();
         }
 
-        // POST: Events/Create
+        // POST: Comments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,EventTitle,EventDate,EventComments")] Event @event)
+        public ActionResult Create([Bind(Include = "Id,Comments,UserId,EventId")] Comment comment)
         {
             if (ModelState.IsValid)
             {
-                db.EventDb.Add(@event);
+                db.Comments.Add(comment);
                 db.SaveChanges();
-                int eventId = @event.Id;
-                return RedirectToAction("EventDisplay", new { id = eventId });
+                return RedirectToAction("Index");
             }
 
-            return View(@event);
+            ViewBag.EventId = new SelectList(db.EventDb, "Id", "EventTitle", comment.EventId);
+            ViewBag.UserId = new SelectList(db.UserProfile, "Id", "UserName", comment.UserId);
+            return View(comment);
         }
 
-        // GET: Events/Edit/5
+        // GET: Comments/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Event @event = db.EventDb.Find(id);
-            if (@event == null)
+            Comment comment = db.Comments.Find(id);
+            if (comment == null)
             {
                 return HttpNotFound();
             }
-            return View(@event);
+            ViewBag.EventId = new SelectList(db.EventDb, "Id", "EventTitle", comment.EventId);
+            ViewBag.UserId = new SelectList(db.UserProfile, "Id", "UserName", comment.UserId);
+            return View(comment);
         }
 
-        // POST: Events/Edit/5
+        // POST: Comments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-
-        public ActionResult Edit([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments,Latitude,Longitude")] Event @event)
-
+        public ActionResult Edit([Bind(Include = "Id,Comments,UserId,EventId")] Comment comment)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(@event).State = EntityState.Modified;
+                db.Entry(comment).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(@event);
+            ViewBag.EventId = new SelectList(db.EventDb, "Id", "EventTitle", comment.EventId);
+            ViewBag.UserId = new SelectList(db.UserProfile, "Id", "UserName", comment.UserId);
+            return View(comment);
         }
 
-        // GET: Events/Delete/5
+        // GET: Comments/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Event @event = db.EventDb.Find(id);
-            if (@event == null)
+            Comment comment = db.Comments.Find(id);
+            if (comment == null)
             {
                 return HttpNotFound();
             }
-            return View(@event);
+            return View(comment);
         }
 
-        // POST: Events/Delete/5
+        // POST: Comments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Event @event = db.EventDb.Find(id);
-            db.EventDb.Remove(@event);
+            Comment comment = db.Comments.Find(id);
+            db.Comments.Remove(comment);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -127,41 +132,5 @@ namespace TailgateLive.Controllers
             }
             base.Dispose(disposing);
         }
-
-
-
-        
-        public ActionResult EventDisplay(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Event @event = db.EventDb.Find(id);
-            if (@event == null)
-            {
-                return HttpNotFound();
-            }
-            return View(@event);
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult EventDisplay([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments,Latitude,Longitude")] Event @event)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(@event).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("HostEventView");
-            }
-            return View(@event);
-        }
-
-        public ActionResult HostEventView()
-        {
-            return View();
-        }
-
-
     }
 }
