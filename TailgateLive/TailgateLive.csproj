@@ -209,18 +209,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610051739211_newmigration10.cs" />
-    <Compile Include="Migrations\201610051739211_newmigration10.Designer.cs">
-      <DependentUpon>201610051739211_newmigration10.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610051802394_newmigration44.cs" />
-    <Compile Include="Migrations\201610051802394_newmigration44.Designer.cs">
-      <DependentUpon>201610051802394_newmigration44.cs</DependentUpon>
+    <Compile Include="Migrations\201610071358060_new1.cs" />
+    <Compile Include="Migrations\201610071358060_new1.Designer.cs">
+      <DependentUpon>201610071358060_new1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Event.cs" />
-    <Compile Include="Models\GameSchedule.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Team.cs" />
@@ -324,11 +319,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610051739211_newmigration10.resx">
-      <DependentUpon>201610051739211_newmigration10.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610051802394_newmigration44.resx">
-      <DependentUpon>201610051802394_newmigration44.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610071358060_new1.resx">
+      <DependentUpon>201610071358060_new1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
