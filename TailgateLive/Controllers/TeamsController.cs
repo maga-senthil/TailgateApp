@@ -46,12 +46,30 @@ namespace TailgateLive.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,TeamName")] Team team)
+        public ActionResult Create([Bind(Include = "Id,Code,FullName,ShortName")] Team team)
         {
+            //if (ModelState.IsValid)
+            //{
+            //    db.TeamDb.Add(team);
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
+
+            //return View(team);
+
+            Team tempTeam = new Team();
+            List<List<string>> teamsList = new List<List<string>>();
+            teamsList = NFL_API.GET_NFL.RunAsyncNFLTeam();
+            for (int i = 0; i < teamsList.Count; i++)
+            {
+                tempTeam.Code = teamsList[i][0];
+                tempTeam.FullName = teamsList[i][1];
+                tempTeam.ShortName = teamsList[i][2];
+                db.TeamDb.Add(tempTeam);
+                db.SaveChanges();
+            }
             if (ModelState.IsValid)
             {
-                db.TeamDb.Add(team);
-                db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -78,7 +96,7 @@ namespace TailgateLive.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,TeamName")] Team team)
+        public ActionResult Edit([Bind(Include = "Id,Code,FullName,ShortName")] Team team)
         {
             if (ModelState.IsValid)
             {

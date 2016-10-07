@@ -12,6 +12,9 @@ body {
 .input-group {
     font-family: 'Oswald', sans-serif;
 }
+.searchByTeamInput {
+    width: 100%;
+}
 .input-group-button {
     display: inline-block;
 }
@@ -164,6 +167,12 @@ textarea {
 }
 
 /* == Twitter == */
+.right{
+   position:absolute;
+   right: 0px;
+   width: 300px;
+   padding: 10px;
+}
 #twitterButtons {
     padding-left: 36px;
 }

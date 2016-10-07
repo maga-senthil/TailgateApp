@@ -24,6 +24,8 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>*@
+                <li>@Html.ActionLink("Populate Teams", "Create", "Teams", routeValues: null, htmlAttributes: new { id = "TeamLink" })</li>
+                <li>@Html.ActionLink("Populate Schedule", "Create", "NFLGameSchedules", routeValues: null, htmlAttributes: new { id = "NFLGameScheduleLink" })</li>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
