@@ -23,7 +23,7 @@ namespace TailgateLive.Controllers
 
 
         // GET: Events
-        public ActionResult Index()
+        public ActionResult Index(NFLGameSchedule nFLGameSchedule)
         {
 
             return View(db.EventDb.ToList());
@@ -45,7 +45,7 @@ namespace TailgateLive.Controllers
         }
 
         // GET: Events/Create
-        public ActionResult Create()
+        public ActionResult Create(NFLGameSchedule nFLGameSchedule)
         {
             return View();
         }
