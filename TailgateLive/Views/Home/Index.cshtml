@@ -1,13 +1,89 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>Home Page</title>
+    @*<script type="text/javascript" src="~/Scripts/jquery-1.11.1.min.js"></script>*@
+    <link href="~/Content/styles/master.css" rel="stylesheet" />
+</head>
+
+<body class="bg">
+    <div id="register-login">
+        <h1>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</h1>
+    </div>
+    <div id="text">
+        <p>Register to find and join the thousands of people tailgating around the world!<br />Find tailgating parties to join or create a private event.</p>
+    </div>
+    @*<div id="text-slider">
+        <h1 class="wel">Tailgate</h1>
+        <h1 class="wel">Sports</h1>
+        <h1 class="wel">Gameday</h1>
+        <h1 class="wel">Social</h1>
+    </div>*@
+    <div class="images"></div>
+    <section id="about" class="wow fadeIn animated">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="header">
+                        <h1>Have a look</h1>
+                        <p></p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <div class="all">
+                            <div class="home-options">
+                                <h1><i class="fa fa-sun-o"></i></h1>
+                                <h1>Grill</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis.</p>
+                            </div>
+                            <div class="home-options2">
+                                <h1><i class="fa fa-beer"></i></h1>
+                                <h1>BYOB</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <div class="display-product wow fadeInUp" data-wow-delay="0.5s">
+                            @*<img src="~/Images/bbqIcon.jpg" alt="laptop" width="100%">*@
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <div class="all">
+                            <div class="home-options">
+                                <h1><i class="fa fa-users"></i></h1>
+                                <h1>Sports talk</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis.</p>
+                            </div>
+        @* edit class name*@
+                            <div class="home-options2">
+                                <h1><i class="fa fa-bullseye"></i></h1>
+                                <h1>Tailgate games</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <script type="text/javascript" src="~/Scripts/scripts.js"></script>
+</body>
+</html>
+
+
+
+@*<html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>*@
     @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
-    <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
+    @*<link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
     <link type="text/css" href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link type="text/css" href="~/Content/Site.css" rel="stylesheet" />
 </head>
@@ -57,19 +133,19 @@
             <h4>Meet up. Make new friends.</h4>
             <p>Spicy jalapeno bacon ipsum dolor amet aliqua enim bresaola cupidatat exercitation dolor pastrami brisket ad andouille deserunt nisi tongue do pork loin. Esse shankle ribeye, magna corned beef duis cillum picanha in pig turducken id commodo biltong incididunt.</p>
             <p>Sed exercitation shankle, commodo officia ex ball tip shank fugiat turducken eu spare ribs id pork. Swine ullamco sausage culpa in enim ad ut anim laboris frankfurter doner pastrami shank. In frankfurter short loin, non duis ut qui meatball. Lorem pastrami swine shankle excepteur meatloaf andouille. Venison adipisicing sint landjaeger.</p>
-            <br />
+            <br />*@
             @*<div class="input-group">
                     <input type="text" id="searchField" class="form-control" placeholder="Search events near you... ">
                     <span class="input-group-btn">
                         <button type="button" id="searchButton" class="btn btn-default" >Search</button>
                     </span>
-                </div>*@
+                </div>
         </div>
-    </div>
+    </div>*@
     @*<div class="teamInput">
         <input type="text" class="typeahead tt-query" data-provide="typeahead" autocomplete="off" spellcheck="false" placeholder="Choose a National Football League Team">
     </div>*@
-    <div class="container">
+    @*<div class="container">
         <div class="row">
             <div class="col-md-7">
 
@@ -91,9 +167,9 @@
     <div id="backToTop">
         <a href="#" class="scrollToTop"><img src="~/Images/up-arrow.png"></a>
     </div>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>*@
     @*<script type="text/javascript" src="~/Scripts/typeahead.min.js"></script>*@
-    <script type="text/javascript" src="~/Scripts/scripts.js"></script>
+    @*<script type="text/javascript" src="~/Scripts/scripts.js"></script>*@
     @*<script type="text/javascript">
     $("#Search").typeahead({
         source: function(query, process) {
@@ -115,7 +191,7 @@
     }
     })
     </script>*@
-</body>
-</html>
+@*</body>
+</html>*@
 
 
