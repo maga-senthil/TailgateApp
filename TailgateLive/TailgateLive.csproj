@@ -211,9 +211,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610072228326_newmigration.cs" />
-    <Compile Include="Migrations\201610072228326_newmigration.Designer.cs">
-      <DependentUpon>201610072228326_newmigration.cs</DependentUpon>
+    <Compile Include="Migrations\201610072244192_updates.cs" />
+    <Compile Include="Migrations\201610072244192_updates.Designer.cs">
+      <DependentUpon>201610072244192_updates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610072305288_migrate.cs" />
+    <Compile Include="Migrations\201610072305288_migrate.Designer.cs">
+      <DependentUpon>201610072305288_migrate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201610082144464_newmigration08.cs" />
     <Compile Include="Migrations\201610082144464_newmigration08.Designer.cs">
@@ -265,6 +269,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\scripts.js" />
+    <Content Include="Scripts\typeahead.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -346,8 +351,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610072228326_newmigration.resx">
-      <DependentUpon>201610072228326_newmigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610072244192_updates.resx">
+      <DependentUpon>201610072244192_updates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610072305288_migrate.resx">
+      <DependentUpon>201610072305288_migrate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610082144464_newmigration08.resx">
       <DependentUpon>201610082144464_newmigration08.cs</DependentUpon>
