@@ -44,6 +44,11 @@ address {
 }
 .btn-default {
     font-size: 18px;
+    background-color: #334a88;
+    border-color: #334a88;
+    color: white;
+    font-weight: bold;
+    font-size: 26px;
 }
 
 /* == top section == */
@@ -112,9 +117,10 @@ address {
     text-align: center;
     text-transform: uppercase;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
-    top: 21%;
+    /* top: 12%; */
     width: 100%;
     z-index: 0 !important;
+    margin-top: 198px;
 }
 #register-login h1 {
     font-size: 86px;
@@ -162,6 +168,7 @@ div#text-slider {
     width: 100%;
     font-size: 27px;
     color: rgba(236, 240, 241,1.0);
+    margin: 4px;
 }
 #scroll-bottom {
     position: absolute;

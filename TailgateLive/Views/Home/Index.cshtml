@@ -3,30 +3,43 @@
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>Home Page</title>
     @*<script type="text/javascript" src="~/Scripts/jquery-1.11.1.min.js"></script>*@
     <link href="~/Content/styles/master.css" rel="stylesheet" />
 </head>
 
 <body class="bg">
-    <div id="register-login">
-        <div id="text-slider">
-            <h1 class="wel">TailgateLive</h1>
-            <h1 class="wel">Sports</h1>
-            <h1 class="wel">Gameday</h1>
-            <h1 class="wel">Social</h1>
+    <div class="container" style="align-content: center">
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="register-login">
+                    <div id="text-slider">
+                        <h1 class="wel">TailgateLive</h1>
+                        <h1 class="wel">Sports</h1>
+                        <h1 class="wel">Gameday</h1>
+                        <h1 class="wel">Social</h1>
+                    </div>
+                </div>
+            </div>
         </div>
-        @*<h1>TailgateLive</h1>*@
-        @*<h1>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</h1>*@
     </div>
     <div id="text">
-        @*<button class="button" id="registerButton"><span>Register</span></button>*@
         <p>Join the thousands of people tailgating around the world!</p>
         <p>Find tailgating parties to join or create a private event.</p>
-        <p>
-            <a class="btn btn-default btn-lg" href="/Account/Register"><i class="fa fa-pencil"></i> Register</a>
-        </p>
+        @if (Request.IsAuthenticated)
+        {
+            <p id="seeScheduleButton">
+                <a class="btn btn-default btn-lg" href="/NFLGameSchedules/Index">See NFL game schedule <i class="fa fa-angle-double-right"></i></a>
+            </p>
+        }
+        else
+        {
+            <p id="registerButton">
+                <a class="btn btn-default btn-lg" href="/Account/Register"><i class="fa fa-pencil"></i> Register</a>
+            </p>
+        }
+
     </div>
     <div class="images"></div>
     <section id="about" class="wow fadeIn animated">
@@ -44,7 +57,7 @@
                                 <h1>Grill</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis.</p>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
