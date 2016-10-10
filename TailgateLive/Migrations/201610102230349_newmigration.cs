@@ -3,7 +3,7 @@ namespace TailgateLive.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class new2 : DbMigration
+    public partial class newmigration : DbMigration
     {
         public override void Up()
         {
