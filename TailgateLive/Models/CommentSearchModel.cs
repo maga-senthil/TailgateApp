@@ -7,6 +7,12 @@ namespace TailgateLive.Models
 {
     public class CommentSearchModel
     {
+        public int NFLGameScheduleId { get; set; }
+        public string gameWeek { get; set; }
+        public string gameDate { get; set; }
+        public string awayTeam { get; set; }
+        public string homeTeam { get; set; }
+        public string gameTimeET { get; set; }
         public string UserName { get; set; }
         public int UserId { get; set; }
         public int EventId { get; set; }

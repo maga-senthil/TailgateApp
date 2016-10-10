@@ -211,12 +211,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-
-
-    <Compile Include="Migrations\201610100110509_fixing merge conflicts.cs" />
-    <Compile Include="Migrations\201610100110509_fixing merge conflicts.Designer.cs">
-      <DependentUpon>201610100110509_fixing merge conflicts.cs</DependentUpon>
-
+    <Compile Include="Migrations\201610101826467_new.cs" />
+    <Compile Include="Migrations\201610101826467_new.Designer.cs">
+      <DependentUpon>201610101826467_new.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -368,10 +365,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-
-    <EmbeddedResource Include="Migrations\201610100110509_fixing merge conflicts.resx">
-      <DependentUpon>201610100110509_fixing merge conflicts.cs</DependentUpon>
-
+    <EmbeddedResource Include="Migrations\201610101826467_new.resx">
+      <DependentUpon>201610101826467_new.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

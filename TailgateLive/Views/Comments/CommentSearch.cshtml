@@ -9,102 +9,151 @@
 @using (Html.BeginForm("CommentSearch", "Comments"))
 {
 
-  @Html.HiddenFor(model => model.EventId)
+    @Html.HiddenFor(model => model.EventId)
 
     if (Model.List_Commments != null)
     {
         <h2>Event Details</h2>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.EventTitle)
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    @Html.DisplayFor(model => model.EventTitle)
-                </td>
 
-            </tr>
-        </table>
-      <h2>Comments about the Event</h2>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.EventTitle)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.UserName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Comments)
-                </th>
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-4"></div>
+                    <div class="col-xs-4">
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.EventTitle)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.EventTitle)
+                            </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.gameDate)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.gameDate)
+                            </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.gameWeek)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.gameWeek)
+                            </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.gameTimeET)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.gameTimeET)
+                            </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.homeTeam)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.homeTeam)
+                            </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.awayTeam)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.awayTeam)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="col-xs-4"></div>
+                </div>
+            </div>
+                <div class="form-group">
+                    <h5 class="col-md-2 control-label"><b>Your Comment about Event</b></h5>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CommentString, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CommentString, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="btn btn-default" value="SaveComment" />
+                    </div>
+                </div>
 
-            </tr>
+                <h2>Comments about the Event</h2>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EventTitle)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.UserName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Comments)
+                        </th>
 
-            @foreach (var item in Model.List_Commments)
+                    </tr>
+                    @foreach (var item in Model.List_Commments)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(model => model.EventTitle)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => item.User.UserName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Comments)
+                            </td>
+
+                        </tr>
+                    }
+                </table>
+          }
+             
+       }
+
+    @section Scripts {
+     @Scripts.Render("~/bundles/jqueryval")
+     }
+
+
+                @*@if(Model.List_Commments != null)
             {
+                <dt>
+                    @Html.DisplayNameFor(model => model.List_Commments)
+                </dt>
+
+                foreach (var item1 in Model.List_Commments)
+                {
+                    <dd>
+                        @Html.DisplayFor(model => model.UserName)
+
+                        @Html.DisplayFor(modelItem => item1.Comments)
+                    </dd>
+                }
+                <dt>
+                    @Html.DisplayNameFor(model => model.EventTitle)
+                </dt>
+
+
+                   <dd>
+                        @Html.DisplayFor(modelItem => Model.EventTitle)
+                    </dd>
+
+
+            }*@
+
+
+
+
+                @*<table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EventTitle)
+                    </th>
+                </tr>
                 <tr>
                     <td>
                         @Html.DisplayFor(model => model.EventTitle)
                     </td>
-                    <td>
-                        @Html.DisplayFor(model => model.UserName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Comments)
-                    </td>
 
                 </tr>
-            }
-        </table>
-    }
-  
-            <div class="form-group">
-                <h5 class="col-md-2 control-label"><b>Your Comment about Event</b></h5>
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.CommentString, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.CommentString, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" class="btn btn-default" value="Home" />
-                </div>
-            </div>
-}
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
-
-
-@*@if(Model.List_Commments != null)
-{
-    <dt>
-        @Html.DisplayNameFor(model => model.List_Commments)
-    </dt>
-
-    foreach (var item1 in Model.List_Commments)
-    {
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
-
-            @Html.DisplayFor(modelItem => item1.Comments)
-        </dd>
-    }
-    <dt>
-        @Html.DisplayNameFor(model => model.EventTitle)
-    </dt>
-
-   
-       <dd>
-            @Html.DisplayFor(modelItem => Model.EventTitle)
-        </dd>
-
-    
-}*@
-
-
-
-
+            </table>*@
