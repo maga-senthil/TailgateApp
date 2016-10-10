@@ -2,6 +2,7 @@
 body {
     font-family: 'Mallanna', sans-serif;
     padding-top: 0;
+    padding-top: 50px;
     padding-bottom: 20px;
 }
 .body-content {
@@ -30,22 +31,6 @@ textarea {
 	font-family: sans-serif;
 	position: relative;
 	margin: 100px;
-}
-.typeahead, .tt-query, .tt-hint {
-	border: 2px solid #CCCCCC;
-	border-radius: 8px;
-	font-size: 24px;
-	height: 30px;
-	line-height: 30px;
-	outline: medium none;
-	padding: 8px 12px;
-	width: 396px;
-}
-.typeahead {
-	background-color: #FFFFFF;
-}
-.typeahead:focus {
-	border: 2px solid #0097CF;
 }
 .tt-query {
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;

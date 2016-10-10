@@ -287,9 +287,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\scripts.js" />
-    <Content Include="Scripts\slider.js" />
-    <Content Include="Scripts\typeahead.min.js" />
-    <Content Include="Scripts\wow.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -377,7 +374,6 @@
     <EmbeddedResource Include="Migrations\201610072305288_migrate.resx">
       <DependentUpon>201610072305288_migrate.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

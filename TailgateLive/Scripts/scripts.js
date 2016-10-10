@@ -36,23 +36,6 @@
     //    ]
     //});
 
-    $('#text-slider').cycle({
-        fx: 'turnDown',
-        timeout: 5000,
-        delay: 400
-    });
-
-    $('#says').cycle({
-        fx: 'scrollLeft',
-        timeout: 4000,
-        delay: 300
-    });
-
-    $('a#mobile').click(function () {
-        $('#top-section .mobile-menu').slideToggle('fast');
-        return false;
-    });
-   
     $(window).scroll(function () {
         if ($(this).scrollTop() > 250) {
             $('.scrollToTop').fadeIn();
