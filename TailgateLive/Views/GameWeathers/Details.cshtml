@@ -1,0 +1,186 @@
+﻿@model TailgateLive.Models.GameWeather
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GameWeather</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.gameId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gameId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gameWeek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gameWeek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gameDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gameDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.awayTeam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.awayTeam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.homeTeam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.homeTeam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gameTimeET)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gameTimeET)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tvStation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tvStation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.winner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.winner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stadium)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stadium)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isDome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isDome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.geoLat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.geoLat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.geoLong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.geoLong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.low)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.low)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.high)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.high)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.forecast)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.forecast)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.windChill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.windChill)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.windSpeed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.windSpeed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.domeImg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.domeImg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.smallImg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.smallImg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mediumImg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mediumImg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.largeImg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.largeImg)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -208,7 +208,18 @@ namespace TailgateLive.Controllers
             return View(model);
 
         }
-
-
+        public GameWeather GetTeamWeather(string team)
+        {
+            GameWeather weather = new GameWeather();
+            if (db.GameWeathers.Where(x => x.awayTeam == team).FirstOrDefault() != null)
+            {
+                weather = db.GameWeathers.Where(x => x.awayTeam == team).FirstOrDefault();
+            }
+            if (db.GameWeathers.Where(x => x.homeTeam == team).FirstOrDefault() != null)
+            {
+                weather = db.GameWeathers.Where(x => x.homeTeam == team).FirstOrDefault();
+            }
+            return weather;
+        }
     }
 }

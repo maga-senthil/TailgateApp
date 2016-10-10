@@ -1,0 +1,153 @@
+﻿@model IEnumerable<TailgateLive.Models.GameWeather>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.gameId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gameWeek)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gameDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.awayTeam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.homeTeam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gameTimeET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tvStation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.winner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stadium)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isDome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.geoLat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.geoLong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.low)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.high)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.forecast)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.windChill)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.windSpeed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.domeImg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.smallImg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mediumImg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.largeImg)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.gameId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gameWeek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gameDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.awayTeam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.homeTeam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gameTimeET)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tvStation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.winner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stadium)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isDome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.geoLat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.geoLong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.low)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.high)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.forecast)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.windChill)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.windSpeed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.domeImg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.smallImg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mediumImg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.largeImg)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
