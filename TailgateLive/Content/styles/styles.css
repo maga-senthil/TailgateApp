@@ -19,6 +19,15 @@ body.bg{
 #createBg {
     background-image: url(../../Images/bg10.jpg);
 }
+input#map {
+    width: 100%;
+    height: 25px;
+}
+#topScrollBox {
+    padding-top: 275px;
+    min-width: 100%;
+    height: 200px;
+}
 header {
     /*margin: 0;*/
     display: block;
