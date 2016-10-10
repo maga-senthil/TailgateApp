@@ -34,5 +34,6 @@ namespace TailgateLive.Models
         public DbSet<User> UserProfile { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<NFLGameSchedule> NFLGameSchedulesDb { get; set; }
+        public DbSet<GameWeather> GameWeathers { get; set; }
     }
 }
