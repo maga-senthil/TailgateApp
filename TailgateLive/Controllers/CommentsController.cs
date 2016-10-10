@@ -67,8 +67,9 @@ namespace TailgateLive.Controllers
                 db.Comments.Add(comment);
                 db.SaveChanges();
                 //int commentId = comment.Id;
+                //return RedirectToAction("CommentSearch", new { EventId =comment.EventId });
 
-                return RedirectToAction("CommentSearch", new { EventId = comment .EventId  });
+               return RedirectToAction("CommentSearch", new { EventId = comment .EventId  });
             }
 
             //ViewBag.EventId = new SelectList(db.EventDb, "Id", "EventTitle", comment.EventId);
@@ -153,15 +154,29 @@ namespace TailgateLive.Controllers
             return View(EventDetails);
         }
         public ActionResult CommentSearch(int EventId)
-        {           
-            return View(new CommentSearchModel() { EventId = EventId });
+        {
+            CommentSearchModel model = new CommentSearchModel() { EventId = EventId };
+            var PeopleComments = db.Comments.Where(y => y.EventId == model.EventId).ToList();
+            model.List_Commments = PeopleComments;
+            var userId = User.Identity.GetUserId();
+            User currentUser = db.UserProfile.FirstOrDefault(x => x.LoginId == userId);
+            model.UserName = currentUser.UserName;
+            Event eventDetail = db.EventDb.FirstOrDefault(y => y.Id == model.EventId);
+            model.EventTitle = eventDetail.EventTitle;
+            return View(model);
+           // return View(new CommentSearchModel() { EventId = EventId });
+
         }
         [HttpPost]
         public ActionResult CommentSearch(CommentSearchModel model)
         {
-            var PeopleComments = db.Comments.Where(y => y.EventId == model.EventId).ToList();
-            model.List_Commments = PeopleComments;
+            //var PeopleComments = db.Comments.Where(y => y.EventId == model.EventId).ToList();
+            //model.List_Commments = PeopleComments;
             var userId = User.Identity.GetUserId();
+            User currentUser = db.UserProfile.FirstOrDefault(x => x.LoginId == userId);
+            //model.UserName = currentUser.UserName;
+            //Event eventDetail = db.EventDb.FirstOrDefault(y => y.Id == model.EventId);
+            //model.EventTitle = eventDetail.EventTitle;
             var comment = new Comment
             {
                 UserId = db.UserProfile.Where(x => x.LoginId == userId).FirstOrDefault().Id,
@@ -170,10 +185,12 @@ namespace TailgateLive.Controllers
             };
             db.Comments.Add(comment);
             db.SaveChanges();
+           return(CommentSearch(model.EventId));
 
-            return View(model);
+            //return View();
 
         }
+
 
     }
 }

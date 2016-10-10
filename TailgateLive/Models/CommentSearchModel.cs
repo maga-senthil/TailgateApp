@@ -14,7 +14,6 @@ namespace TailgateLive.Models
         public DateTime? EventDate { get; set; }
         public string Comments { get; set; }
         public string CommentString { get; set; }
-        //public Comment EventCommentSearch { get; set; }
        public IEnumerable<Comment> List_Commments { get; set; }
         public Comment CommentSearch { get; set; }
 

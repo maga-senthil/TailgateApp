@@ -4,24 +4,74 @@
     ViewBag.Title = "CommentSearch";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>CommentSearch</h2>
-@using (Html.BeginForm("CommentSearch","Comments"))
+
+
+@using (Html.BeginForm("CommentSearch", "Comments"))
 {
-@Html.HiddenFor(model => model.EventId)
+
+  @Html.HiddenFor(model => model.EventId)
+
+    if (Model.List_Commments != null)
+    {
+        <h2>Event Details</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventTitle)
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.EventTitle)
+                </td>
+
+            </tr>
+        </table>
+      <h2>Comments about the Event</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Comments)
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model.List_Commments)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.EventTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comments)
+                    </td>
+
+                </tr>
+            }
+        </table>
+    }
+  
             <div class="form-group">
-                @Html.LabelFor(model => model.CommentString, htmlAttributes: new { @class = "control-label col-md-2" })
+                <h5 class="col-md-2 control-label"><b>Your Comment about Event</b></h5>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.CommentString, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.CommentString, "", new { @class = "text-danger" })
                 </div>
             </div>
-          
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" class="btn btn-default" value="CommentSearch" />
+                    <input type="submit" class="btn btn-default" value="Home" />
                 </div>
             </div>
-
 }
 
 @section Scripts {
@@ -29,20 +79,32 @@
 }
 
 
-@if(Model.List_Commments != null)
+@*@if(Model.List_Commments != null)
 {
     <dt>
         @Html.DisplayNameFor(model => model.List_Commments)
     </dt>
 
-    foreach (var item in Model.List_Commments)
+    foreach (var item1 in Model.List_Commments)
     {
         <dd>
             @Html.DisplayFor(model => model.UserName)
 
-            @Html.DisplayFor(modelItem => item.Comments)
+            @Html.DisplayFor(modelItem => item1.Comments)
         </dd>
-        }
-}
+    }
+    <dt>
+        @Html.DisplayNameFor(model => model.EventTitle)
+    </dt>
+
+   
+       <dd>
+            @Html.DisplayFor(modelItem => Model.EventTitle)
+        </dd>
+
+    
+}*@
+
+
 
 
