@@ -203,6 +203,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
+    <Compile Include="Controllers\GameWeathersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NFLGameSchedulesController.cs" />
@@ -211,15 +212,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+
     <Compile Include="Migrations\201610101826467_new.cs" />
     <Compile Include="Migrations\201610101826467_new.Designer.cs">
       <DependentUpon>201610101826467_new.cs</DependentUpon>
+
+    <Compile Include="Migrations\201610101949564_new1.cs" />
+    <Compile Include="Migrations\201610101949564_new1.Designer.cs">
+      <DependentUpon>201610101949564_new1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610102047380_new2.cs" />
+    <Compile Include="Migrations\201610102047380_new2.Designer.cs">
+      <DependentUpon>201610102047380_new2.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\CommentSearchModel.cs" />
     <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\GameWeather.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NFLGameSchedule.cs" />
@@ -352,6 +364,11 @@
     <Content Include="Views\NFLGameSchedules\Details.cshtml" />
     <Content Include="Views\NFLGameSchedules\Edit.cshtml" />
     <Content Include="Views\NFLGameSchedules\Index.cshtml" />
+    <Content Include="Views\GameWeathers\Create.cshtml" />
+    <Content Include="Views\GameWeathers\Delete.cshtml" />
+    <Content Include="Views\GameWeathers\Details.cshtml" />
+    <Content Include="Views\GameWeathers\Edit.cshtml" />
+    <Content Include="Views\GameWeathers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -365,8 +382,16 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+
     <EmbeddedResource Include="Migrations\201610101826467_new.resx">
       <DependentUpon>201610101826467_new.cs</DependentUpon>
+
+ <EmbeddedResource Include="Migrations\201610101949564_new1.resx">
+      <DependentUpon>201610101949564_new1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610102047380_new2.resx">
+      <DependentUpon>201610102047380_new2.cs</DependentUpon>
+
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

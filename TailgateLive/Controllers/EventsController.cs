@@ -184,5 +184,48 @@ namespace TailgateLive.Controllers
         }
 
 
+
+
+        public ActionResult EventIndex(int EventId)
+        {
+            var EventDetails = db.EventDb.Where(x => x.Id == EventId).FirstOrDefault();
+            return View(EventDetails);
+        }
+        public ActionResult CommentSearch(int EventId)
+        {
+            return View(new CommentSearchModel() { EventId = EventId });
+        }
+        [HttpPost]
+        public ActionResult CommentSearch(CommentSearchModel model)
+        {
+            var PeopleComments = db.Comments.Where(y => y.EventId == model.EventId).ToList();
+            model.List_Commments = PeopleComments;
+            var userId = User.Identity.GetUserId();
+            var comment = new Comment
+            {
+                UserId = db.UserProfile.Where(x => x.LoginId == userId).FirstOrDefault().Id,
+                EventId = model.EventId,
+                Comments = model.CommentString
+            };
+            db.Comments.Add(comment);
+            db.SaveChanges();
+
+            return View(model);
+
+        }
+        public GameWeather GetTeamWeather(string team)
+        {
+            GameWeather weather = new GameWeather();
+            if (db.GameWeathers.Where(x => x.awayTeam == team).FirstOrDefault() != null)
+            {
+                weather = db.GameWeathers.Where(x => x.awayTeam == team).FirstOrDefault();
+            }
+            if (db.GameWeathers.Where(x => x.homeTeam == team).FirstOrDefault() != null)
+            {
+                weather = db.GameWeathers.Where(x => x.homeTeam == team).FirstOrDefault();
+            }
+            return weather;
+        }
+
     }
 }
