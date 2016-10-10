@@ -43,12 +43,12 @@ address {
     padding-left: 25px;
 }
 .btn-default {
-    font-size: 18px;
+    font-size: 21px;
     background-color: #334a88;
     border-color: #334a88;
     color: white;
     font-weight: bold;
-    font-size: 26px;
+    
 }
 
 /* == top section == */
@@ -194,7 +194,10 @@ a {
 #socialLoginForm {
     padding-left: 25px;
 }
-
+/* == Table == */
+.table {
+    margin-left: 35px;
+}
 /* == Testimonials == */
 section#testmonials {
     background-image: url(../../Images/bgContact.jpg);
