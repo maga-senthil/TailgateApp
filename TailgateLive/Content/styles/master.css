@@ -1,0 +1,8 @@
+/* master css file */
+@import url(bootstrap.min.css);
+@import url(blaite.css);
+@import url(font-awesome.css);
+@import url(responsive.css);
+@import url(animate/animate.css);
+@import url(styles.css);
+@import url(Site.css);

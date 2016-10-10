@@ -211,9 +211,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610092154380_new22.cs" />
-    <Compile Include="Migrations\201610092154380_new22.Designer.cs">
-      <DependentUpon>201610092154380_new22.cs</DependentUpon>
+
+
+    <Compile Include="Migrations\201610100110509_fixing merge conflicts.cs" />
+    <Compile Include="Migrations\201610100110509_fixing merge conflicts.Designer.cs">
+      <DependentUpon>201610100110509_fixing merge conflicts.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -231,15 +234,28 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\styles\animate\animate.css" />
+    <Content Include="Content\styles\blaite.css" />
+    <Content Include="Content\styles\bootstrap.min.css" />
+    <Content Include="Content\styles\demo.css" />
+    <Content Include="Content\styles\font-awesome.css" />
+    <Content Include="Content\styles\master.css" />
+    <Content Include="Content\styles\responsive.css" />
+    <Content Include="Content\styles\Site.css" />
+    <Content Include="Content\styles\styles.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfontba72.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\ionicons44ca.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Images\1.png" />
+    <Content Include="Images\11.png" />
+    <Content Include="Images\2.png" />
+    <Content Include="Images\3.png" />
+    <Content Include="Images\bgContact.jpg" />
+    <Content Include="Images\footballPlayersBW.jpeg" />
     <Content Include="Images\grilling.jpg" />
     <Content Include="Images\grilling2.jpg" />
-    <Content Include="Images\searchicon.png" />
     <Content Include="Images\tailgate01.jpg" />
     <Content Include="Images\up-arrow.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
@@ -249,10 +265,21 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="fonts\fontawesome-webfontba72.eot" />
+    <Content Include="fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="fonts\fontawesome-webfontba72.woff" />
+    <Content Include="fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="fonts\ionicons44ca.ttf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\cycle.js" />
+    <Content Include="Scripts\general.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.easing.1.3.js" />
+    <Content Include="Scripts\jquery.scrollTo.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -261,7 +288,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\scripts.js" />
-    <Content Include="Scripts\typeahead.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -342,8 +368,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610092154380_new22.resx">
-      <DependentUpon>201610092154380_new22.cs</DependentUpon>
+
+    <EmbeddedResource Include="Migrations\201610100110509_fixing merge conflicts.resx">
+      <DependentUpon>201610100110509_fixing merge conflicts.cs</DependentUpon>
+
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

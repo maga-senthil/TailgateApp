@@ -1,7 +1,6 @@
 ﻿/* == Body == */
 body {
-    font-family: 'Mallanna', sans-serif;
-    padding-top: 50px;
+    font-family: 'Open Sans Condensed', sans-serif;
     padding-bottom: 20px;
 }
 .body-content {
@@ -31,22 +30,6 @@ textarea {
 	position: relative;
 	margin: 100px;
 }
-.typeahead, .tt-query, .tt-hint {
-	border: 2px solid #CCCCCC;
-	border-radius: 8px;
-	font-size: 24px;
-	height: 30px;
-	line-height: 30px;
-	outline: medium none;
-	padding: 8px 12px;
-	width: 396px;
-}
-.typeahead {
-	background-color: #FFFFFF;
-}
-.typeahead:focus {
-	border: 2px solid #0097CF;
-}
 .tt-query {
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
 }
@@ -75,7 +58,7 @@ textarea {
 	margin: 0;
 }
 /* == Navbar == */
-.navbar-inverse {
+/*.navbar-inverse {
     background-color: rgba(255, 255, 255, 0.66);
     border-color: transparent;
 }
@@ -110,7 +93,7 @@ textarea {
     background-color: #333;
     border: 1px solid #333;
     border-radius: 4px;
-}
+}*/
 
 /* == Carousel == */
 #myCarousel {
@@ -203,7 +186,6 @@ textarea {
     border: none;
     cursor: pointer;
 }
-
 .dropdownbtn:hover,
 .dropdownbtn:focus {
     background-color: #0094ff;
@@ -223,7 +205,6 @@ textarea {
     position: relative;
     display: inline-block;
 }
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -232,18 +213,15 @@ textarea {
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
-
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
-
 .dropdown a:hover {
     background-color: #ddd
 }
-
 .show {
     display: block;
 }*/

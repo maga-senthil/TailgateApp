@@ -1,0 +1,247 @@
+﻿/* == General == */
+body.bg{
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: rgba(236, 240, 241,1.0);	
+    padding-top: 0;	
+}
+.bgContact {
+    background-image: url(../../Images/bgContact.jpg);
+}
+.images {
+    background-image: url(../../Images/footballPlayersBW.jpeg);
+    max-width: 100%;
+    background-repeat: repeat, no-repeat;
+    background-position: left top;
+    background-size: auto, cover;
+    background-attachment: fixed;
+    height: 100vh;
+}
+header {
+    /*margin: 0;*/
+    display: block;
+}
+section#about .header p  {
+    padding-bottom: 40px;
+}
+h2 {
+    margin-bottom: 10px;
+    margin-top: 0;
+    padding-top: 108px;
+    padding-left: 25px;
+    font-size: 35px;
+}
+h3 {
+    font-size: 30px;
+}
+h4 {
+    font-size: 28px;
+}
+h3, h4 {
+    padding-left: 25px;
+}
+address {
+    padding-left: 25px;
+}
+.btn-default {
+    font-size: 18px;
+    background-color: #334a88;
+    border-color: #334a88;
+    color: white;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+/* == top section == */
+#top-section {
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: rgba(0, 0, 0, 1.0);
+    height: 78px;
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+}
+#top-section .menu {
+    font-family: 'Open Sans Condensed', sans-serif;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+#top-section .menu ul {}
+#top-section .menu ul li {
+    list-style-type: none;
+    display: inline-block;
+}
+#top-section .menu ul li a {
+    text-decoration: none;
+    color: rgba(236, 240, 241, 1.0);
+    font-size: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    -moz-transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+#top-section .menu ul li a:hover {
+    background-color: rgba(236, 240, 241, 1.0);
+    color: rgba(0, 0, 0, 1.0);
+}
+#top-section .menu ul li a:focus {
+    background-color: rgba(236, 240, 241, 1.0);
+    color: rgba(0, 0, 0, 1.0);
+}
+#top-section .logo {
+    margin-left: 2%;
+    margin-top: 5px;
+}
+#top-section .logo h3 i {
+    margin-bottom: -5px;
+}
+#top-section .logo h3 a {
+    color: rgba(236, 240, 241, 1.0);
+    text-decoration: none;
+    font-size: 25px;
+    letter-spacing: 3px;
+}
+
+/* == Slider == */
+#register-login {
+    color: rgba(236, 240, 241, 1.0);
+    font-size: 60px;
+    height: 100px;
+    margin: 0;
+    overflow: hidden;
+    position: absolute !important;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+    /* top: 12%; */
+    width: 100%;
+    z-index: 0 !important;
+    margin-top: 198px;
+}
+#register-login h1 {
+    font-size: 86px;
+    margin-top: auto;
+    color: rgba(236, 240, 241, 1.0);
+}
+#register-login a{
+    color: rgba(236, 240, 241, 0.8);
+    font-weight:bold;
+    letter-spacing: 4px;
+}
+#register-login h1 a:hover{
+    color:#20caff;
+}
+div#text-slider {
+    top: 1.3%
+}
+#text-slider {
+    overflow: hidden;
+    position: absolute !important;
+    z-index: 0 !important;
+    margin: 0;
+    width: 100%;
+}
+#text{
+    position: absolute !important;
+    z-index: 0 !important;
+    top: 33%;
+    width: 100%;
+}
+#text-slider h1.wel {
+    font-size: 40px;
+    z-index: 9 !important;
+    overflow: hidden;
+    color: rgba(236, 240, 241, 1.0);
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    text-transform: uppercase;
+}
+#text p {
+    text-align: center;
+    width: 100%;
+    font-size: 27px;
+    color: rgba(236, 240, 241,1.0);
+    margin: 4px;
+}
+#scroll-bottom {
+    position: absolute;
+    z-index: 0;
+    bottom: 10px;
+    left: 48%;
+}
+#scroll-bottom a {
+    font-size: 25px;
+    color: rgba(236, 240, 241, 1.0);
+}
+/* == Forms == */
+.form-horizontal .form-group {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.checkbox {
+    padding-left: 25px;
+}
+a {
+    padding-left: 25px;
+}
+#socialLoginForm {
+    padding-left: 25px;
+}
+
+/* == Testimonials == */
+section#testmonials {
+    background-image: url(../../Images/bgContact.jpg);
+}
+/* == Footer == */
+#footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+}
+.form-group {
+    margin-bottom: 49px;
+}
+footer .row {
+    width: 100%;
+    margin: 0 auto;
+}
+footer p {
+    padding: 20px 0;
+    color: rgba(236, 240, 241, 0.8);
+    margin-left: -20px;
+    margin-top: 13px;
+}
+footer ul {
+    float: right;
+    margin-top: 24px;
+}
+footer ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 15px;
+}
+footer ul li a {
+    text-decoration: none;
+    color: rgba(236, 240, 241, 0.8);
+    font-size: 25px;
+    -moz-transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+}
+footer ul li a:hover {
+    color: rgba(236, 240, 241, 1.0);
+}
+footer a#go-top {
+    text-decoration: none;
+    color: rgba(236, 240, 241, 0.8);
+    font-size: 45px;
+    float: right;
+    margin-right: -60px;
+    margin-top: 10px;
+}

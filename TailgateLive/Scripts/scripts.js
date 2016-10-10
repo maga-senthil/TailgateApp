@@ -35,7 +35,7 @@
     //    'Washington Redskins'
     //    ]
     //});
-   
+
     $(window).scroll(function () {
         if ($(this).scrollTop() > 250) {
             $('.scrollToTop').fadeIn();

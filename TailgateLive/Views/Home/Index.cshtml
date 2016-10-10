@@ -1,121 +1,133 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
     <title>Home Page</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
-    <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
-    <link type="text/css" href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <link type="text/css" href="~/Content/Site.css" rel="stylesheet" />
+    @*<script type="text/javascript" src="~/Scripts/jquery-1.11.1.min.js"></script>*@
+    <link href="~/Content/styles/master.css" rel="stylesheet" />
 </head>
 
-<body>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner" role="listbox">
-            <div class="item">
-                <img src="/Images/grillingBbq.jpg" alt="Grilling">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>TailgateLive</h1>
-                        <p id="tailgatePara">A live chat application for anyone, and everyone, who is interested in setting up group events for tailgating parties.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item active">
-                <img src="/Images/tailgate01.jpg" alt="Smokey Grilling">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Chill and Grill.</h1>
-                        <p id="chillGrillPara">Lorem ipsum dolor sit amet, turpis nec amet netus massa viverra. In volutpat, arcu elit velit dui metus tincidunt, hendrerit erat mauris urna donec dapibus phasellus.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/Images/grilling.jpg" alt="Football Tailgating">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Host events and/or attend events in your area.</h1>
-                        <p id="hostPara">Lorem ipsum Meet up. Make new friends. Chill and grill amet, turpis nec amet netus massa viverra. In volutpat, arcu elit velit dui metus tincidunt, hendrerit erat mauris urna donec dapibus phasellusm. </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
-    </div>
-
-    <hr />
-
-    <div class="row">
-        <div class="col-md-12">
-            <h3>Getting ready to tailgate before the next game?</h3>
-            <p><b>You’re not alone!</b></p>
-            <p>There are so many tailgaters in every football season that enjoy one of America’s favorite pastimes<br />Before you crank up the party, check out our tailgating events to find a tailgating event happening near you or plan one out with your friends. </p>
-            <h4>Meet up. Make new friends.</h4>
-            <p>Spicy jalapeno bacon ipsum dolor amet aliqua enim bresaola cupidatat exercitation dolor pastrami brisket ad andouille deserunt nisi tongue do pork loin. Esse shankle ribeye, magna corned beef duis cillum picanha in pig turducken id commodo biltong incididunt.</p>
-            <p>Sed exercitation shankle, commodo officia ex ball tip shank fugiat turducken eu spare ribs id pork. Swine ullamco sausage culpa in enim ad ut anim laboris frankfurter doner pastrami shank. In frankfurter short loin, non duis ut qui meatball. Lorem pastrami swine shankle excepteur meatloaf andouille. Venison adipisicing sint landjaeger.</p>
-            <br />
-            @*<div class="input-group">
-                    <input type="text" id="searchField" class="form-control" placeholder="Search events near you... ">
-                    <span class="input-group-btn">
-                        <button type="button" id="searchButton" class="btn btn-default" >Search</button>
-                    </span>
-                </div>*@
-        </div>
-    </div>
-    @*<div class="teamInput">
-        <input type="text" class="typeahead tt-query" data-provide="typeahead" autocomplete="off" spellcheck="false" placeholder="Choose a National Football League Team">
-    </div>*@
-    <div class="container">
+<body class="bg">
+    <div class="container" style="align-content: center">
         <div class="row">
-            <div class="col-md-7">
-
-            </div>
-            <div class="twitter-timeline col-md-5">
-                <h3>Check us out on Twitter</h3>
-                <div id="twitterTimeline">
-                    <a class="twitter-timeline" data-width="600" data-height="620" data-theme="light" data-link-color="#2B7BB9" href="https://twitter.com/TailgateLive">Tweets by TailgateLive</a>
-                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
-                <div id="twitterButtons">
-                    <a href="https://twitter.com/intent/tweet?screen_name=TailgateLive" class="twitter-mention-button" data-size="large" data-show-count="false">Tweet to &#x40;TailgateLive</a>
-                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    <span id="followButton"><a class="twitter-follow-button" href="https://twitter.com/TailgateLive" data-size="large" data-show-count="false">Follow &#x40;TailgateLive</a></span>
+            <div class="col-xs-12">
+                <div id="register-login">
+                    <div id="text-slider">
+                        <h1 class="wel">TailgateLive</h1>
+                        <h1 class="wel">Sports</h1>
+                        <h1 class="wel">Gameday</h1>
+                        <h1 class="wel">Social</h1>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <div id="text">
+        <p>Join the thousands of people tailgating around the world!</p>
+        <p>Find tailgating parties to join or create a private event.</p>
+        @if (Request.IsAuthenticated)
+        {
+            <p id="seeScheduleButton">
+                <a class="btn btn-default btn-lg" href="/NFLGameSchedules/Index">See NFL game schedule <i class="fa fa-angle-double-right"></i></a>
+            </p>
+        }
+        else
+        {
+            <p id="registerButton">
+                <a class="btn btn-default btn-lg" href="/Account/Register"><i class="fa fa-pencil"></i> Register</a>
+            </p>
+        }
+
+    </div>
+    <div class="images"></div>
+    <section id="about" class="wow fadeIn animated">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="header">
+                        <h1>Have a look</h1>
+                        <p id="headerPara">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                        <div class="all">
+                            <div class="home-options">
+                                <h1><i class="fa fa-cutlery"></i></h1>
+                                <h1>Grill</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                        <div class="all">
+                            <div class="home-options2">
+                                <h1><i class="fa fa-beer"></i></h1>
+                                <h1>BYOB</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                        <div class="all">
+                            <div class="home-options">
+                                <h1><i class="fa fa-users"></i></h1>
+                                <h1>Sports talk</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                        <div class="all">
+                            <div class="home-options2">
+                                <h1><i class="fa fa-bullseye"></i></h1>
+                                <h1>Tailgate games</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="testmonials">
+        <div class="testmonial">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="header wow fadeIn animated">
+                            <h1>testmonials</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                        </div>
+                        <div class="people-says wow fadeIn animated">
+                            <ul id="says">
+                                <li>
+                                    <img src="~/Images/11.png" alt="peoples">
+                                    <h2>John Deo</h2>
+                                    <p><i class=" fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. <i class=" fa fa-quote-right"></i></p>
+                                </li>
+                                <li>
+                                    <img src="~/Images/1.png" alt="peoples">
+                                    <h2>Rohn Deo</h2>
+                                    <p><i class=" fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. <i class=" fa fa-quote-right"></i></p>
+                                </li>
+                                <li>
+                                    <img src="~/Images/2.png" alt="peoples">
+                                    <h2>Nethan Deo</h2>
+                                    <p><i class=" fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. <i class=" fa fa-quote-right"></i></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <div id="backToTop">
         <a href="#" class="scrollToTop"><img src="~/Images/up-arrow.png"></a>
     </div>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    @*<script type="text/javascript" src="~/Scripts/typeahead.min.js"></script>*@
     <script type="text/javascript" src="~/Scripts/scripts.js"></script>
-    @*<script type="text/javascript">
-    $("#Search").typeahead({
-        source: function(query, process) {
-        var NFLTeams = [];
-        teams = {};
-
-        return $.post('#', { query: query }, function(data) {
-            $.each(data, function(i, team) {
-                teams[team.Name] = team;
-                teams.push(country.Name);
-            });
-            process(countries);
-        });
-    },
-    updater: function(item) {
-        var selectedShortCode = items[item].ShortCode;
-        $("#details").text("Selected: " + selectedShortCode);
-        return item;
-    }
-    })
-    </script>*@
 </body>
 </html>
-
-
