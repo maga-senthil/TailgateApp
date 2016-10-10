@@ -245,12 +245,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\ionicons44ca.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Images\bbqIcon.jpg" />
     <Content Include="Images\bgContact.jpg" />
     <Content Include="Images\footballPlayersBW.jpeg" />
     <Content Include="Images\grilling.jpg" />
     <Content Include="Images\grilling2.jpg" />
-    <Content Include="Images\searchicon.png" />
     <Content Include="Images\tailgate01.jpg" />
     <Content Include="Images\up-arrow.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />

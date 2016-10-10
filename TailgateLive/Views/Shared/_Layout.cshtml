@@ -3,13 +3,36 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - TailgateLive</title>
+    <title>@ViewBag.Title - My ASP.NET Application</title>
     <script type="text/javascript" src="~/Scripts/jquery-1.11.1.min.js"></script>
     <link type="text/css" href="~/Content/styles/master.css" rel="stylesheet" />
+    @Scripts.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("TailgateLive", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">*@
+                @*<ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>*@
+                @*<li>@Html.ActionLink("Populate Teams", "Create", "Teams", routeValues: null, htmlAttributes: new { id = "TeamLink" })</li>
+                    <li>@Html.ActionLink("Populate Schedule", "Create", "NFLGameSchedules", routeValues: null, htmlAttributes: new { id = "NFLGameScheduleLink" })</li>*@
+                @*@Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>*@
+
     <header id="top">
         <div id="top-section">
             <div class="logo">
@@ -17,11 +40,7 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-                    <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.Partial("_LoginPartial")</li>
                 </ul>
             </div>
         </div>
