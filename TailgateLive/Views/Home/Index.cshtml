@@ -11,19 +11,23 @@
 
 <body class="bg">
     <div id="register-login">
-        <h1>TailgateLive</h1>
+        <div id="text-slider">
+            <h1 class="wel">TailgateLive</h1>
+            <h1 class="wel">Sports</h1>
+            <h1 class="wel">Gameday</h1>
+            <h1 class="wel">Social</h1>
+        </div>
+        @*<h1>TailgateLive</h1>*@
         @*<h1>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</h1>*@
     </div>
     <div id="text">
         @*<button class="button" id="registerButton"><span>Register</span></button>*@
-        <p><button class="button" id="registerButton"><span>Register</span></button> to find and join the thousands of people tailgating around the world!<br />Find tailgating parties to join or create a private event.</p>
+        <p>Join the thousands of people tailgating around the world!</p>
+        <p>Find tailgating parties to join or create a private event.</p>
+        <p>
+            <a class="btn btn-default btn-lg" href="/Account/Register"><i class="fa fa-pencil"></i> Register</a>
+        </p>
     </div>
-    @*<div id="text-slider">
-        <h1 class="wel">Tailgate</h1>
-        <h1 class="wel">Sports</h1>
-        <h1 class="wel">Gameday</h1>
-        <h1 class="wel">Social</h1>
-    </div>*@
     <div class="images"></div>
     <section id="about" class="wow fadeIn animated">
         <div class="container">
@@ -31,16 +35,20 @@
                 <div class="col-sm-12 col-md-12 col-lg-12">
                     <div class="header">
                         <h1>Have a look</h1>
-                        <p></p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                        <p id="headerPara">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
                     </div>
-                    <div class="col-sm-3 col-md-3 col-lg-3">
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
                         <div class="all">
                             <div class="home-options">
-                                <h1><i class="fa fa-sun-o"></i></h1>
+                                <h1><i class="fa fa-cutlery"></i></h1>
                                 <h1>Grill</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis.</p>
                             </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                        <div class="all">
                             <div class="home-options2">
                                 <h1><i class="fa fa-beer"></i></h1>
                                 <h1>BYOB</h1>
@@ -48,24 +56,56 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="display-product wow fadeInUp" data-wow-delay="0.5s">
-                            @*<img src="~/Images/grilling2.jpg" alt="laptop" width="100%">*@
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-lg-3">
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
                         <div class="all">
                             <div class="home-options">
                                 <h1><i class="fa fa-users"></i></h1>
                                 <h1>Sports talk</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis.</p>
                             </div>
-        @* edit class name*@
+
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                        <div class="all">
                             <div class="home-options2">
                                 <h1><i class="fa fa-bullseye"></i></h1>
                                 <h1>Tailgate games</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis.</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="testmonials">
+        <div class="testmonial">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="header wow fadeIn animated">
+                            <h1>testmonials</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                        </div>
+                        <div class="people-says wow fadeIn animated">
+                            <ul id="says">
+                                <li>
+                                    <img src="~/Images/11.png" alt="peoples">
+                                    <h2>John Deo</h2>
+                                    <p><i class=" fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. <i class=" fa fa-quote-right"></i></p>
+                                </li>
+                                <li>
+                                    <img src="~/Images/1.png" alt="peoples">
+                                    <h2>Rohn Deo</h2>
+                                    <p><i class=" fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. <i class=" fa fa-quote-right"></i></p>
+                                </li>
+                                <li>
+                                    <img src="~/Images/2.png" alt="peoples">
+                                    <h2>Nethan Deo</h2>
+                                    <p><i class=" fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus faucibus velit ac fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. <i class=" fa fa-quote-right"></i></p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

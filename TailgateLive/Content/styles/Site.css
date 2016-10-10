@@ -1,5 +1,6 @@
 ﻿/* == Body == */
 body {
+    font-family: 'Open Sans Condensed', sans-serif;
     padding-bottom: 20px;
 }
 .body-content {
@@ -57,7 +58,7 @@ textarea {
 	margin: 0;
 }
 /* == Navbar == */
-.navbar-inverse {
+/*.navbar-inverse {
     background-color: rgba(255, 255, 255, 0.66);
     border-color: transparent;
 }
@@ -92,7 +93,7 @@ textarea {
     background-color: #333;
     border: 1px solid #333;
     border-radius: 4px;
-}
+}*/
 
 /* == Carousel == */
 #myCarousel {

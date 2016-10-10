@@ -20,12 +20,12 @@
                 </button>
                 @Html.ActionLink("TailgateLive", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">*@
-                @*<ul class="nav navbar-nav">
+            <div class="navbar-collapse collapse">*
+                <ul class="nav navbar-nav">
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    </ul>*@
+                    </ul>
                 @*<li>@Html.ActionLink("Populate Teams", "Create", "Teams", routeValues: null, htmlAttributes: new { id = "TeamLink" })</li>
                     <li>@Html.ActionLink("Populate Schedule", "Create", "NFLGameSchedules", routeValues: null, htmlAttributes: new { id = "NFLGameScheduleLink" })</li>*@
                 @*@Html.Partial("_LoginPartial")
@@ -39,7 +39,7 @@
                 <h3>@Html.ActionLink("TailgateLive", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</h3>
             </div>
             <div class="menu">
-                <ul>
+                <ul class="nav navbar-nav">
                     <li>@Html.Partial("_LoginPartial")</li>
                 </ul>
             </div>

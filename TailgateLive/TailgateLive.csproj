@@ -245,6 +245,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\ionicons44ca.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\1.png" />
+    <Content Include="Images\11.png" />
+    <Content Include="Images\2.png" />
+    <Content Include="Images\3.png" />
     <Content Include="Images\bgContact.jpg" />
     <Content Include="Images\footballPlayersBW.jpeg" />
     <Content Include="Images\grilling.jpg" />

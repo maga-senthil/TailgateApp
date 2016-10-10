@@ -160,9 +160,9 @@ height: 100vh;
 /*----------------------------------------------------------------*/
 /*-----------------------section about----------------------------*/
 /*----------------------------------------------------------------*/
-section#about{
-margin: 0;
-padding: 6% 4%;
+section#about {
+    margin: 0;
+    padding: 14% 4%;
 }
 section#about .header{}
 section#about .header h1{
@@ -206,7 +206,7 @@ font-size: 80px;
 color: rgba(0,0,0,1.0);
 }
 section#about .all .home-options2{ 
-margin-top: 82%;  
+/*margin-top: 82%;*/  
 }
 section#about .all  .home-options2 h1{
 text-align: center;
