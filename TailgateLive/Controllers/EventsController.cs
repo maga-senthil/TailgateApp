@@ -47,7 +47,9 @@ namespace TailgateLive.Controllers
         // GET: Events/Create
         public ActionResult Create(NFLGameSchedule nFLGameSchedule)
         {
-            return View();
+            Event newEvent = new Event();
+            newEvent.NFLGameScheduleId = nFLGameSchedule.Id;
+            return View(newEvent);
         }
 
         // POST: Events/Create
@@ -58,8 +60,7 @@ namespace TailgateLive.Controllers
 
         public ActionResult Create([Bind(Include = "Id,EventTitle,EventDate,EventRating,EventStatus,EventComments,Users,NFLGameScheduleId")] Event @event)
         {
-
-            
+            //@event.NFLGameSchedule = db.NFLGameSchedulesDb.Where(x => x.Id == @event.NFLGameScheduleId).First();
             string userId = User.Identity.GetUserId();
             User currentUser = db.UserProfile.FirstOrDefault(x => x.LoginId == userId);
             @event.Users = new List<User>();
@@ -70,7 +71,7 @@ namespace TailgateLive.Controllers
                 currentUser.Events.Add(@event);
                 db.SaveChanges();
                 int eventId = @event.Id;
-               return RedirectToAction("EventDisplay", new { id = eventId });
+                return RedirectToAction("EventDisplay", new { id = eventId });
             }
 
             return View(@event);
