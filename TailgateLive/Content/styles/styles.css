@@ -16,6 +16,9 @@ body.bg{
     background-attachment: fixed;
     height: 100vh;
 }
+#createBg {
+    background-image: url(../../Images/bg10.jpg);
+}
 header {
     /*margin: 0;*/
     display: block;
@@ -198,6 +201,13 @@ a {
 .table {
     margin-left: 35px;
 }
+
+/* == Event views == */
+label {
+    float: left;
+    padding-left: 15px;
+}
+
 /* == Testimonials == */
 section#testmonials {
     background-image: url(../../Images/bgContact.jpg);
