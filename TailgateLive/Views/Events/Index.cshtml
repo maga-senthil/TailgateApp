@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Tailgate Events</h2>
 
 <p>
     @*@Html.ActionLink("Create New", "Create")*@
@@ -14,9 +14,9 @@
         <th>
             @Html.DisplayNameFor(model => model.EventTitle)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.EventDate)
-        </th>
+        </th>*@
         @*<th>
             @Html.DisplayNameFor(model => model.EventRating)
         </th>
@@ -35,9 +35,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.EventTitle)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.EventDate)
-            </td>
+            </td>*@
             @*<td>
                 @Html.DisplayFor(modelItem => item.EventRating)
             </td>
@@ -49,7 +49,7 @@
             </td>
             <td>
                 @*@Html.ActionLink("Edit", "Edit", new { id = item.Id}, new { @id="CreatorEdit"}) |*@
-                @Html.ActionLink("Go to Event!!!", "SingleEventDisplay", new { id = item.Id }) |
+                @Html.ActionLink("Go to Event!!!", "SingleEventDisplay", new { id = item.Id })
                 @*@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @id="CreatorDelete"})*@
             </td>
         </tr>

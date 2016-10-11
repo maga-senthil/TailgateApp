@@ -4,7 +4,7 @@
     ViewBag.Title = "FutureIndex";
 }
 
-<h2>FutureIndex</h2>
+<h2>NFL Game Schedule - Future Games</h2>
 
 </p>
 <table class="table">
@@ -64,8 +64,8 @@
                 @Html.DisplayFor(modelItem => item.winner)
             </td>
             <td>
-                @Html.ActionLink("View Events", "ViewEvents", new { id = item.Id }) |
-                @Html.ActionLink("Create Event", "CreateEvent", new { id = item.Id }) |
+                @Html.ActionLink("View Events", "ViewEvents", new { id = item.Id })
+                @Html.ActionLink("Create Event", "CreateEvent", new { id = item.Id })
             </td>
         </tr>
     }
