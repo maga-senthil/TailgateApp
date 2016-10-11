@@ -163,6 +163,7 @@ namespace TailgateLive.Controllers
 
             CommentSearchModel model = new CommentSearchModel() { EventId = EventId };
             var PeopleComments = db.Comments.Where(y => y.EventId == model.EventId).ToList();
+            PeopleComments.Reverse();
             model.List_Commments = PeopleComments;
             foreach (var item in PeopleComments)
             {
@@ -178,6 +179,7 @@ namespace TailgateLive.Controllers
             model.gameTimeET = eventSchedule.gameTimeET;
             model.homeTeam = eventSchedule.homeTeam;
             model.awayTeam = eventSchedule.awayTeam;
+            model.EventComments = eventDetail.EventComments;
             model.stadium   = weather[8] ;
             model.isDome    = weather[9] ;
             model.geoLat    = weather[10];

@@ -13,93 +13,131 @@
 
     if (Model.List_Commments != null)
     {
-        <h2>Event Details</h2>
+        <h2>@Html.DisplayFor(model => model.EventTitle)</h2>
+        <h4>@Html.DisplayFor(model => model.EventComments)</h4>
 
         <div>
             <div class="container">
-                <div class="row">
-                    <div class="col-xs-2"></div>
-                    <div class="col-xs-4">
-                        <dl class="dl-horizontal">
-                            <dt>
-                                @Html.DisplayNameFor(model => model.EventTitle)
-                            </dt>
-                            <dd>
-                                @Html.DisplayFor(model => model.EventTitle)
-                            </dd>
-                            <dt>
-                                @Html.DisplayNameFor(model => model.gameDate)
-                            </dt>
-                            <dd>
-                                @Html.DisplayFor(model => model.gameDate)
-                            </dd>
-                            <dt>
-                                @Html.DisplayNameFor(model => model.gameWeek)
-                            </dt>
-                            <dd>
-                                @Html.DisplayFor(model => model.gameWeek)
-                            </dd>
-                            <dt>
-                                @Html.DisplayNameFor(model => model.gameTimeET)
-                            </dt>
-                            <dd>
-                                @Html.DisplayFor(model => model.gameTimeET)
-                            </dd>
-                            <dt>
-                                @Html.DisplayNameFor(model => model.homeTeam)
-                            </dt>
-                            <dd>
-                                @Html.DisplayFor(model => model.homeTeam)
-                            </dd>
-                            <dt>
-                                @Html.DisplayNameFor(model => model.awayTeam)
-                            </dt>
-                            <dd>
-                                @Html.DisplayFor(model => model.awayTeam)
-                            </dd>
-                        </dl>
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <dl class="dl-horizontal">
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.gameDate)
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.gameDate)
+                                    </dd>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.gameWeek)
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.gameWeek)
+                                    </dd>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.gameTimeET)
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.gameTimeET)
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-3">
+                                <dl class="dl-horizontal">
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.homeTeam)
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.homeTeam)
+                                    </dd>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.awayTeam)
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.awayTeam)
+                                    </dd>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.stadium)
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.stadium)
+                                    </dd>
+                                    @*<dd>
+                                        <img src=@Html.DisplayFor(model => model.domeImg) alt="" />
+                                    </dd>*@
+                                </dl>
+                            </div>
+                            <div class="col-xs-3">
+                                <dl class="dl-horizontal">
+                                    @*<dt>
+                                        @Html.DisplayNameFor(model => model.geoLat)
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.geoLat)
+                                    </dd>*@
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.low)
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.low)
+                                    </dd>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.high)
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.high)
+                                    </dd>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.forecast)
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.forecast)
+                                    </dd>
+                                    <dd>
+                                        <img src=@Html.DisplayFor(model => model.largeImg) alt="" />
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-3">
+                                <dl class="dl-horizontal">
+                                    @*<dt>
+                                    @Html.DisplayNameFor(model => model.isDome)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.isDome)
+                                </dd>*@
+                                    @*<dt>
+                                        @Html.DisplayNameFor(model => model.geoLong)
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.geoLong)
+                                    </dd>*@
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.windChill)
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.windChill)
+                                    </dd>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.windSpeed)
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.windSpeed)
+                                    </dd>
+                                    @*<dt>
+                                        @Html.DisplayNameFor(model => model.domeImg)
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.domeImg)
+                                    </dd>*@
+                                    @*<dt>
+                                        @Html.DisplayNameFor(model => model.largeImg)
+                                    </dt>*@
+                                </dl>
+                            </div>
+                            <div class="col-xs-2"> @Html.ActionLink("See Map!!!!!", "GoMap", new { id = Model.EventId }) </div>
+                        </div>
                     </div>
-                    <div class="col-xs-4">
-                        <dl class="dl-horizontal">
-                            <dt>
-                                @Html.DisplayNameFor(model => model.stadium)
-                            </dt>
-                            <dd>
-                                @Html.DisplayFor(model => model.isDome)
-                            </dd>
-                            <dt>
-                                @Html.DisplayNameFor(model => model.geoLat)
-                            </dt>
-                            <dd>
-                                @Html.DisplayFor(model => model.geoLong)
-                            </dd>
-                            <dt>
-                                @Html.DisplayNameFor(model => model.low)
-                            </dt>
-                            <dd>
-                                @Html.DisplayFor(model => model.high)
-                            </dd>
-                            <dt>
-                                @Html.DisplayNameFor(model => model.forecast)
-                            </dt>
-                            <dd>
-                                @Html.DisplayFor(model => model.windChill)
-                            </dd>
-                            <dt>
-                                @Html.DisplayNameFor(model => model.windSpeed)
-                            </dt>
-                            <dd>
-                                @Html.DisplayFor(model => model.domeImg)
-                            </dd>
-                            <dt>
-                                @Html.DisplayNameFor(model => model.largeImg)
-                            </dt>
-                        </dl>
-                    </div>
-                    <div class="col-xs-2"> @Html.ActionLink("See Map!!!!!", "GoMap", new { id = Model.EventId }) </div>
                 </div>
-            </div>
-            </div>
                 <div class="form-group">
                     <h5 class="col-md-2 control-label"><b>Your Comment about Event</b></h5>
                     <div class="col-md-10">
@@ -116,9 +154,9 @@
                 <h2>Comments about the Event</h2>
                 <table class="table">
                     <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.EventTitle)
-                        </th>
+                        @*<th>
+                        @Html.DisplayNameFor(model => model.EventTitle)
+                    </th>*@
                         <th>
                             @Html.DisplayNameFor(model => model.UserName)
                         </th>
@@ -130,9 +168,9 @@
                     @foreach (var item in Model.List_Commments)
                     {
                         <tr>
-                            <td>
-                                @Html.DisplayFor(model => model.EventTitle)
-                            </td>
+                            @*<td>
+                            @Html.DisplayFor(model => model.EventTitle)
+                        </td>*@
                             <td>
                                 @Html.DisplayFor(model => item.User.UserName)
                             </td>
@@ -143,13 +181,13 @@
                         </tr>
                     }
                 </table>
-          }
-             
-       }
+                }
 
-    @section Scripts {
-     @Scripts.Render("~/bundles/jqueryval")
-     }
+                }
+
+                @section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                }
 
 
                 @*@if(Model.List_Commments != null)
