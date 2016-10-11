@@ -57,8 +57,8 @@ address {
 }
 .btn-default {
     font-size: 21px;
-    background-color: #334a88;
-    border-color: #334a88;
+    background-color: #7c0006;
+    border-color: #7c0006;
     color: white;
     font-weight: bold;
     
@@ -193,6 +193,16 @@ div#text-slider {
     font-size: 25px;
     color: rgba(236, 240, 241, 1.0);
 }
+/*#scroll-last {
+    position: absolute;
+    z-index: 0;
+    bottom: 10px;
+    left: 48%;
+}
+#scroll-last a {
+    font-size: 25px;
+    color: rgba(236, 240, 241, 1.0);
+}*/
 /* == Forms == */
 .form-horizontal .form-group {
     padding-left: 25px;
