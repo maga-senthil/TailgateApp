@@ -10,11 +10,11 @@ namespace TailgateLive.NFL_API
 {
     public class GET_NFL
     {
-        public List<string> GetWeather(string team)
+        public static string[] GetWeather(string team)
         {
-            List<string> tempWeather = new List<string>();
             List<List<string>> weatherList = new List<List<string>>();
             weatherList = NFL_API.GET_NFL.RunAsyncWeather();
+            string[] tempWeather = new string[weatherList[0].Count];
             for (int i = 0; i < weatherList.Count; i++)
             {
                 for (int ii = 0; ii < weatherList[0].Count; ii++)

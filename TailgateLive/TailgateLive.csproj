@@ -212,9 +212,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610102230349_newmigration.cs" />
-    <Compile Include="Migrations\201610102230349_newmigration.Designer.cs">
-      <DependentUpon>201610102230349_newmigration.cs</DependentUpon>
+    <Compile Include="Migrations\201610110407433_new1.cs" />
+    <Compile Include="Migrations\201610110407433_new1.Designer.cs">
+      <DependentUpon>201610110407433_new1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -359,6 +359,7 @@
     <Content Include="Views\GameWeathers\Details.cshtml" />
     <Content Include="Views\GameWeathers\Edit.cshtml" />
     <Content Include="Views\GameWeathers\Index.cshtml" />
+    <Content Include="Views\NFLGameSchedules\FutureIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -372,8 +373,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610102230349_newmigration.resx">
-      <DependentUpon>201610102230349_newmigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610110407433_new1.resx">
+      <DependentUpon>201610110407433_new1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

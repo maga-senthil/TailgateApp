@@ -7,6 +7,19 @@ namespace TailgateLive.Models
 {
     public class CommentSearchModel
     {
+        public string stadium { get; set; }
+        public string isDome { get; set; }
+        public string geoLat { get; set; }
+        public string geoLong { get; set; }
+        public string low { get; set; }
+        public string high { get; set; }
+        public string forecast { get; set; }
+        public string windChill { get; set; }
+        public string windSpeed { get; set; }
+        public string domeImg { get; set; }
+        public string smallImg { get; set; }
+        public string mediumImg { get; set; }
+        public string largeImg { get; set; }
         public int NFLGameScheduleId { get; set; }
         public string gameWeek { get; set; }
         public string gameDate { get; set; }

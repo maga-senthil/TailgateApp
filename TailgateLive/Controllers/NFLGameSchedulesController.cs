@@ -19,7 +19,10 @@ namespace TailgateLive.Controllers
         {
             return View(db.NFLGameSchedulesDb.ToList());
         }
-
+        public ActionResult FutureIndex()
+        {
+            return View(db.NFLGameSchedulesDb.Where(x => x.winner == "").ToList());
+        }
         // GET: NFLGameSchedules/Details/5
         public ActionResult Details(int? id)
         {

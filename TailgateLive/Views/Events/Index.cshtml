@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @*@Html.ActionLink("Create New", "Create")*@
 </p>
 <table class="table" id="basicIndex">
     <tr>
@@ -17,12 +17,12 @@
         <th>
             @Html.DisplayNameFor(model => model.EventDate)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.EventRating)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.EventStatus)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.EventComments)
         </th>
@@ -38,19 +38,19 @@
             <td>
                 @Html.DisplayFor(modelItem => item.EventDate)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.EventRating)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.EventStatus)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.EventComments)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id}, new { @id="CreatorEdit"}) |
-                @Html.ActionLink("Details", "EventDisplay", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @id="CreatorDelete"})
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.Id}, new { @id="CreatorEdit"}) |*@
+                @Html.ActionLink("Go to Event!!!", "SingleEventDisplay", new { id = item.Id }) |
+                @*@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @id="CreatorDelete"})*@
             </td>
         </tr>
     }

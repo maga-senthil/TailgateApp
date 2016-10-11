@@ -1,0 +1,73 @@
+﻿@model IEnumerable<TailgateLive.Models.NFLGameSchedule>
+
+@{
+    ViewBag.Title = "FutureIndex";
+}
+
+<h2>FutureIndex</h2>
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.gameId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gameWeek)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gameDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.awayTeam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.homeTeam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gameTimeET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tvStation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.winner)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.gameId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gameWeek)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gameDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.awayTeam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.homeTeam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gameTimeET)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tvStation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.winner)
+            </td>
+            <td>
+                @Html.ActionLink("View Events", "ViewEvents", new { id = item.Id }) |
+                @Html.ActionLink("Create Event", "CreateEvent", new { id = item.Id }) |
+            </td>
+        </tr>
+    }
+
+</table>

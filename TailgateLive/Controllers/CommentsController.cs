@@ -155,6 +155,12 @@ namespace TailgateLive.Controllers
         }
         public ActionResult CommentSearch(int EventId)
         {
+            Event newEvent = new Event();
+            newEvent = db.EventDb.Where(x => x.Id == EventId).FirstOrDefault();
+            NFLGameSchedule game = new NFLGameSchedule();
+            game = db.NFLGameSchedulesDb.Where(x => x.Id == newEvent.NFLGameScheduleId).FirstOrDefault();
+            string[] weather = NFL_API.GET_NFL.GetWeather(game.homeTeam);
+
             CommentSearchModel model = new CommentSearchModel() { EventId = EventId };
             var PeopleComments = db.Comments.Where(y => y.EventId == model.EventId).ToList();
             model.List_Commments = PeopleComments;
@@ -171,7 +177,20 @@ namespace TailgateLive.Controllers
             model.gameWeek = eventSchedule.gameWeek;
             model.gameTimeET = eventSchedule.gameTimeET;
             model.homeTeam = eventSchedule.homeTeam;
-            model.awayTeam = eventSchedule.awayTeam; 
+            model.awayTeam = eventSchedule.awayTeam;
+            model.stadium   = weather[8] ;
+            model.isDome    = weather[9] ;
+            model.geoLat    = weather[10];
+            model.geoLong   = weather[11];
+            model.low       = weather[12];
+            model.high      = weather[13];
+            model.forecast  = weather[14];
+            model.windChill = weather[15];
+            model.windSpeed = weather[16];
+            model.domeImg   = weather[17];
+            model.smallImg  = weather[18];
+            model.mediumImg = weather[19];
+            model.largeImg  = weather[20];
             return View(model);
 
         }
@@ -195,6 +214,18 @@ namespace TailgateLive.Controllers
             db.SaveChanges();
            return(CommentSearch(model.EventId));
         }
-
+        public ActionResult GoMap(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Event @event = db.EventDb.Find(id);
+            if (@event == null)
+            {
+                return HttpNotFound();
+            }
+            return RedirectToAction("EventDisplay", "Events", @event);
+        }
     }
 }
