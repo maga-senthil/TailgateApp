@@ -23,21 +23,9 @@
         margin-top: 20px;
         align-content: center;
     }
-
-    #topScrollBox {
-        min-width: 100%;
-        height: 200px;
-    }
 </style>
-<select id="topScrollBox" multiple class="form-control">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-</select>
 
-<div id="mapView" style="position: relative; height:500px;"></div>
+<div id="mapView" style="position: relative; height:500px; padding-top:25px;"></div>
 <input id="map" type="button" value="Show your Location" onclick="getLocation();"/>
 <div>
     @using (Html.BeginForm())
@@ -73,9 +61,11 @@
                 </div>
             </div>
         </div>
+
     }
     
-</div>
+
+    </div>
 
 
 

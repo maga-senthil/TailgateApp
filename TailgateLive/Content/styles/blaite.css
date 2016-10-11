@@ -81,16 +81,7 @@ text-shadow:2px 2px 0px rgba(0,0,0,0.1);
 margin: 0;
 text-transform: uppercase;
 }
-div#scroll-bottom{
-position: absolute;
-z-index: 0;
-bottom:10px;
-left: 48%;
-}
-div#scroll-bottom a {
-font-size: 25px;
-color: rgba(236, 240, 241,1.0);	
-}
+
 /*----------------------------------------------------------------*/
 /*------------------------home section----------------------------*/
 /*----------------------------------------------------------------*/

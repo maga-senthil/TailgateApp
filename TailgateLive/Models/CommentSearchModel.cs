@@ -42,6 +42,7 @@ namespace TailgateLive.Models
         public string UserName { get; set; }
         public int UserId { get; set; }
         public int EventId { get; set; }
+        [Display(Name = "Event Title")]
         public string EventTitle { get; set; }
         public DateTime? EventDate { get; set; }
         [Display(Name = "Comment")]
