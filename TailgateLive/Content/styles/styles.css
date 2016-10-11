@@ -16,6 +16,18 @@ body.bg{
     background-attachment: fixed;
     height: 100vh;
 }
+#createBg {
+    background-image: url(../../Images/bg10.jpg);
+}
+input#map {
+    width: 100%;
+    height: 25px;
+}
+#topScrollBox {
+    padding-top: 275px;
+    min-width: 100%;
+    height: 200px;
+}
 header {
     /*margin: 0;*/
     display: block;
@@ -43,12 +55,12 @@ address {
     padding-left: 25px;
 }
 .btn-default {
-    font-size: 18px;
+    font-size: 21px;
     background-color: #334a88;
     border-color: #334a88;
     color: white;
     font-weight: bold;
-    font-size: 26px;
+    
 }
 
 /* == top section == */
@@ -193,6 +205,16 @@ a {
 }
 #socialLoginForm {
     padding-left: 25px;
+}
+/* == Table == */
+.table {
+    margin-left: 35px;
+}
+
+/* == Event views == */
+label {
+    float: left;
+    padding-left: 15px;
 }
 
 /* == Testimonials == */
